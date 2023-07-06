@@ -1,32 +1,15 @@
 .App-header{
     background-color: whitesmoke;
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    height: 30vh;
-    margin: 0 10vw;
 }
-.Logo{
-    overflow: hidden;
-    width: 80%;
-    height: 20vh;   
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .titleHeader{
+    margin: 0;
+    padding: 2rem;
+    width: 100%;
+    font-weight: 100;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: black;
 }
 .titleHeader b{
     font-weight: bold;
 }
-
-.Logo .nav-search{
-    
-}
-
-
-  

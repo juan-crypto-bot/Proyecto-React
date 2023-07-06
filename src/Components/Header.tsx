@@ -6,9 +6,6 @@ export const Header = () => {
     return(
         <header className="App-header">
             <h3 className='titleHeader'><b>Github</b> Jobs</h3>
-            <div className="Logo">
-                <img src={headerImg}></img>
-            </div> 
         </header>
     );
 };
