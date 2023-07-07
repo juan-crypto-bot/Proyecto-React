@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import './Styled/FiltrosStyle.css';
 
 interface BuscadorProps{
@@ -39,6 +40,10 @@ const Filtros = () => {
             />
         </FormControl>
         <h4 className="text">LOCATION</h4>
+        <div className="countries">
+        <IconButton color="primary" type="submit">
+            <TravelExploreIcon/>
+        </IconButton>
         <TextField className="location"
             id="location"
             name="location"
@@ -48,14 +53,16 @@ const Filtros = () => {
             size="small"
             // value={search}
             // onChange={handleSearchChange}
-            required
-        ></TextField>
+            required>
+        </TextField>
+        </div>
        <FormControl className="countries" component="fieldset">
         <FormControlLabel value="London" control={<Radio />} label="London" />
         <FormControlLabel value="Amsterdam" control={<Radio />} label="Amsterdam" />
         <FormControlLabel value="New York" control={<Radio />} label="New York" />
         <FormControlLabel value="Berlin" control={<Radio />} label="Berlin" />
         </FormControl>
+        <p className="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolor perferendis voluptatem adipisci provident. Inventore vitae alias quis, placeat error aperiam quisquam unde accusantium tenetur facilis odit velit obcaecati voluptatum.</p>
        </div>
     );
 };

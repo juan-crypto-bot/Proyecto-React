@@ -1,9 +1,29 @@
 .filtros{
-    width: auto;
-    margin-left: 20vw;
+    width: 30%;
+    margin-left: 10vw;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.fulltime{
+    margin-top: 20px;
 }
 
 .text{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: gray
 }
+
+.countries{
+    margin-bottom: 15px;
+    border: 5px solid;
+}
+
+.parrafo{
+    width: 40%;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+
 
