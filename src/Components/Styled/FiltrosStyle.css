@@ -1,22 +1,14 @@
 .filtros{
-    width: 30%;
+    width: 40%;
     padding-left: 10%;
     display: flex;
     flex-direction: column;
-}
-
-.fulltime{
-    margin-top: 20px;
+    margin-top: 5vh;
 }
 
 .text{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: gray
-}
-
-.countries{
-    margin-bottom: 15px;
-    border: 5px solid;
 }
 
 .parrafo{
@@ -25,5 +17,18 @@
     flex-direction: column; */
 }
 
+.search{
+    border-radius: 5px;
+    background-color: white;
+    width: 80%;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.form__input{
+    flex: 1;
+}
 
 

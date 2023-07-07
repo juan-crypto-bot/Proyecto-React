@@ -40,16 +40,16 @@ const Filtros = () => {
             />
         </FormControl>
         <h4 className="text">LOCATION</h4>
-        <div className="countries">
+        <div className="search">
         <IconButton color="primary" type="submit">
             <TravelExploreIcon/>
         </IconButton>
-        <TextField className="location"
+        <TextField className="form__input"
             id="location"
             name="location"
             label="City, state, zip code or country"
-            style = {{width: 350}}
-            variant="outlined"
+            // style = {{width: 350}}
+            variant="standard"
             size="small"
             // value={search}
             // onChange={handleSearchChange}

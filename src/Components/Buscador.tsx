@@ -16,6 +16,7 @@ const Buscador = ({setSearchQuery}: BuscadorProps) => {
     function handleSearchChange(e:React.ChangeEvent<HTMLInputElement>){
         setSearch(e.target.value);
     }
+
     return(
         <Form  className="buscador" method="post">
         <div className="form__control">

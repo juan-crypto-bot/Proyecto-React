@@ -23,6 +23,7 @@ const Home = () => {
   }, []);
 
   console.log(myJobs);
+  console.log(searchQuery);
 
   return (
     <>

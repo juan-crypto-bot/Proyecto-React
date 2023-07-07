@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { HomeLayout } from './Layouts/HomeLayout';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import {
   createBrowserRouter,
   RouterProvider,
