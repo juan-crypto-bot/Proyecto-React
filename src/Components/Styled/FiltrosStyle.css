@@ -1,8 +1,8 @@
 .filtros{
     width: 30%;
-    margin-left: 10vw;
-    /* display: flex;
-    flex-direction: column; */
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
 }
 
 .fulltime{
