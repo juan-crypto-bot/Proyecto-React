@@ -6,17 +6,25 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './App.css';
-import Home from './Pages/Home';
-
+import Home ,{action as homeAction} from './Pages/Home';
+import Error404 from './Pages/Error404';
 
 function App() {
   
   const router = createBrowserRouter([{
     path:"/",
     element:<HomeLayout/>,
+   
     children:[
-      {index:true,
-      element:<Home/>}
+      {
+        index:true,
+      element:<Home/>,
+      action:homeAction
+    },
+    {
+      path:"*", 
+      element:<Error404/>    
+    }
     ]
   }])
 
