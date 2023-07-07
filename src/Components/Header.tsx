@@ -5,7 +5,7 @@ import './Styled/HeaderStyled.css'
 export const Header = () => {
     return(
         <header className="App-header">
-            <h3 className='titleHeader'><b>Github</b> Jobs</h3>
+            <h2 className='titleHeader'><b>Github</b> Jobs</h2>
         </header>
     );
 };

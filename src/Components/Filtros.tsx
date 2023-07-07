@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-
+import './Styled/FiltrosStyle.css';
 
 interface BuscadorProps{
     setSearchQuery: React.Dispatch<React.SetStateAction<string>>,
@@ -29,8 +29,8 @@ const Filtros = () => {
     //     setSearchQuery(search);
     // }
     return(
-       <div>
-        <FormControl component="fieldset">
+       <div className="filtros">
+        <FormControl className="fulltime" component="fieldset">
             <FormControlLabel
                 value="fulltime"
                 control={<Checkbox color="primary" />}
@@ -38,18 +38,19 @@ const Filtros = () => {
                 labelPlacement="end"
             />
         </FormControl>
-        <h4>LOCATION</h4>
-        <TextField 
+        <h4 className="text">LOCATION</h4>
+        <TextField className="location"
             id="location"
             name="location"
-            label="Location"
+            label="City, state, zip code or country"
+            style = {{width: 350}}
             variant="outlined"
             size="small"
             // value={search}
             // onChange={handleSearchChange}
             required
         ></TextField>
-       <FormControl component="fieldset">
+       <FormControl className="countries" component="fieldset">
         <FormControlLabel value="London" control={<Radio />} label="London" />
         <FormControlLabel value="Amsterdam" control={<Radio />} label="Amsterdam" />
         <FormControlLabel value="New York" control={<Radio />} label="New York" />

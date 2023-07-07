@@ -16,13 +16,14 @@ const Buscador = ({setSearchQuery}: BuscadorProps) => {
         setSearch(e.target.value);
     }
     return(
-       <Form method="get">
+        <Form method="get">
         <TextField 
             id="searchQuery"
             name="searchQuery"
-            label="Job"
+            label="Title, companies, expertise or benefits"
             variant="outlined"
             size="small"
+            style = {{width: 700}}
             value={search}
             onChange={handleSearchChange}
             required
