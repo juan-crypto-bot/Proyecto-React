@@ -6,7 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './App.css';
-import Home ,{action as homeAction} from './Pages/Home';
+import Home from './Pages/Home';
 import Error404 from './Pages/Error404';
 
 function App() {
@@ -18,7 +18,6 @@ function App() {
       {
         index:true,
       element:<Home/>,
-      action:homeAction
     },
     {
       path:"*", 
