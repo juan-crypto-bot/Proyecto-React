@@ -48,7 +48,6 @@ const Filtros = () => {
             id="location"
             name="location"
             label="City, state, zip code or country"
-            // style = {{width: 350}}
             variant="standard"
             size="small"
             // value={search}
@@ -62,7 +61,6 @@ const Filtros = () => {
         <FormControlLabel value="New York" control={<Radio />} label="New York" />
         <FormControlLabel value="Berlin" control={<Radio />} label="Berlin" />
         </FormControl>
-        <p className="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolor perferendis voluptatem adipisci provident. Inventore vitae alias quis, placeat error aperiam quisquam unde accusantium tenetur facilis odit velit obcaecati voluptatum.</p>
        </div>
     );
 };

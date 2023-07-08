@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Job } from "../Interfaces";
+import LogosService from "./logos.service";
 
 const TrabajosService = {
   GetTrabajos: (busqueda: string): Promise<Job[]> => {
@@ -15,15 +16,19 @@ const TrabajosService = {
             "X-RapidAPI-Host": "jobsearch4.p.rapidapi.com",
           },
         })
-        .then((result) => {
+        .then(  (result) => {
           const apiJobs: any[] = result.data.data;
-          const jobs: Job[] = apiJobs.map((apiJob) => ({
-            Title: apiJob.title,
-            Company: apiJob.company,
-            Location: apiJob.location,
-            PostDate: new Date(apiJob.dateAdded),
-            Slug: apiJob.slug,
-          }));
+          const jobs: Job[] = apiJobs.map( (apiJob) => {
+            const job = {
+              Image:"",
+              Title: apiJob.title,
+              Company: apiJob.company,
+              Location: apiJob.location,
+              PostDate: new Date(apiJob.dateAdded),
+              Slug: apiJob.slug,
+            }
+            console.log(LogosService.GetLogos(apiJob.company).then(result=>job.Image = result))
+            return job });
           resolve(jobs);
         })
         .catch((error) => reject(error));
