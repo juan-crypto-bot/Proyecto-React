@@ -16,9 +16,12 @@ const Buscador = ({setSearchQuery}: BuscadorProps) => {
     function handleSearchChange(e:React.ChangeEvent<HTMLInputElement>){
         setSearch(e.target.value);
     }
+    function handleSearchQueryChange(){
+        setSearchQuery(search);
+    }
 
     return(
-        <Form  className="buscador" method="post">
+        <div  className="buscador">
         <div className="form__control">
             <IconButton color="primary" type="submit">
                 <WorkOutlineIcon/>
@@ -33,14 +36,14 @@ const Buscador = ({setSearchQuery}: BuscadorProps) => {
                 onChange={handleSearchChange}
                 required
             ></TextField>
-            <IconButton color="primary" type="submit">
+            <IconButton color="primary" type="button" onClick={handleSearchQueryChange}>
                 <SearchIcon className="search-icon"/>
             </IconButton>
-        </div>
+        </div>\
         {/* <input type="text" id="searchQuery" name="searchQuery" value={search}
             onChange={handleSearchChange}/>
             <button>Buscar</button> */}
-       </Form>
+       </div>
     );
 };
 export default Buscador;
