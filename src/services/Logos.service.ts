@@ -9,7 +9,6 @@ const LogosService = {
             name: busqueda,
           },
           headers: {
-       
           'Content-Type': 'application/json',
           'X-Api-Key': '7ydX8tN2lIHYA6ozxhkvSg==yrQeOhzY28VuOj2E',
           },

@@ -1,0 +1,28 @@
+.job-card{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    /* border: 2px solid black; */
+    background-color: white;
+    border-radius: 10px;
+    margin: 5% 0;
+    height: 5rem;
+    width: 100%;
+}
+
+.boton{
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+.image{
+    width: 5rem;
+}
+
+.info{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: gray;
+    width: 60%;
+
+}

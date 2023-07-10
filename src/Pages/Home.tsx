@@ -5,7 +5,8 @@ import Buscador from "../Components/Buscador";
 import JobsList from "../Components/JobsList";
 import { Job } from "../Interfaces";
 import Filtros from "../Components/Filtros";
-import TrabajosService from "../services/trabajos.service";
+import TrabajosService from "../services/Trabajos.service";
+import "../Components/Styled/HomeStyled.css";  
 
 const Home = () => {
   // const jobs = useActionData();
@@ -29,8 +30,10 @@ const Home = () => {
   return (
     <>
       <Buscador setSearchQuery={setSearchQuery} />
-      <Filtros />
-      <JobsList myJobs={myJobs}/>
+      <div className="jobs">
+        <Filtros />
+        <JobsList myJobs={myJobs}/>
+      </div>
     </>
   );
 };
