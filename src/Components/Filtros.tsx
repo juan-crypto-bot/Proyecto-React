@@ -30,6 +30,17 @@ const Filtros = () => {
     //     setSearchQuery(search);
     // }
     return(
+            // <div className="filtros">
+
+
+
+
+
+
+
+            // </div>
+
+
        <div className="filtros">
         <FormControl className="fulltime" component="fieldset">
             <FormControlLabel
