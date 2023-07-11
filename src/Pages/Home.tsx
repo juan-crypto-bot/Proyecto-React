@@ -8,13 +8,14 @@ import Filtros from "../Components/Filtros";
 import TrabajosService from "../services/trabajos.service";
 import "../Components/Styled/HomeStyled.css";
 
+
 const Home = () => {
   // const jobs = useActionData();
   const [myJobs, setMyJobs] = useState<Job[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [error, setError] = useState(false);
 
-  const getTrabajos =async () => {
+  const getTrabajos = () => {
     TrabajosService.GetTrabajos(searchQuery)
       .then((trabajos) => {
         setMyJobs(trabajos);
