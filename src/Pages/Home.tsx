@@ -6,19 +6,21 @@ import JobsList from "../Components/JobsList";
 import { Job } from "../Interfaces";
 import Filtros from "../Components/Filtros";
 import TrabajosService from "../services/trabajos.service";
-import "../Components/Styled/HomeStyled.css";
-
+import PendingIcon from "@mui/icons-material/Pending";
+import "./HomeStyled.css";
 
 const Home = () => {
   // const jobs = useActionData();
   const [myJobs, setMyJobs] = useState<Job[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getTrabajos = () => {
+    setIsLoading(true);
     TrabajosService.GetTrabajos(searchQuery)
       .then((trabajos) => {
         setMyJobs(trabajos);
+        setIsLoading(false);
       })
       .catch((e) => console.log("Hubo un error", e));
   };
@@ -33,8 +35,19 @@ const Home = () => {
     <>
       <Buscador setSearchQuery={setSearchQuery} />
       <div className="jobs">
-        <Filtros />
-        <JobsList myJobs={myJobs} />
+        <aside className="filter__container">
+          <Filtros />
+        </aside>
+        <main className="job-list__container">
+          {!isLoading && myJobs.length !== 0 ? (
+            <JobsList myJobs={myJobs} />
+          ) : (
+            <div className="loading">
+              <PendingIcon fontSize="medium" color="primary"></PendingIcon>
+              Loading...
+            </div>
+          )}
+        </main>
       </div>
     </>
   );
