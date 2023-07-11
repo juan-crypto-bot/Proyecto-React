@@ -7,6 +7,7 @@ import { Job } from "../Interfaces";
 import Filtros from "../Components/Filtros";
 import TrabajosService from "../services/trabajos.service";
 import "../Components/Styled/HomeStyled.css";
+import Footer from "../Components/Footer";
 
 const Home = () => {
   // const jobs = useActionData();
@@ -26,6 +27,8 @@ const Home = () => {
     getTrabajos();
   }, [searchQuery]);
 
+  console.log(myJobs);
+
   return (
     <>
       <Buscador setSearchQuery={setSearchQuery} />
@@ -33,6 +36,7 @@ const Home = () => {
         <Filtros />
         <JobsList myJobs={myJobs} />
       </div>
+      <Footer/>
     </>
   );
 };
