@@ -7,4 +7,9 @@
 }
 .job-list__container {
   flex-grow: 1;
+  height: 100%;
+}
+.pagination__container {
+  display: flex;
+  justify-content: center;
 }
