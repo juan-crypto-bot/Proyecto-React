@@ -1,0 +1,10 @@
+.jobs {
+  margin: 1rem 0;
+  display: flex;
+}
+.filter__container {
+  width: 30%;
+}
+.job-list__container {
+  flex-grow: 1;
+}
