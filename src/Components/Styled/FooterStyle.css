@@ -1,11 +1,6 @@
-.job-list{
-    width: 70%;
-}
-
-.loading{
+.footer{
     display: flex;
     justify-content: center;
-    margin: 100px 0;
-    font-size: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: gray;
 }
