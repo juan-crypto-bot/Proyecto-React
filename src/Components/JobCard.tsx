@@ -13,7 +13,7 @@ const JobCard = (job: Job) => {
       {job.Image ? (
         <img className="image" src={job.Image} />
       ) : (
-        <img className="image" src="" />
+        <img className="image" src="GitHubIcon.jpg" />
       )}
       <div className="info">
         <p className="company">{job.Company}</p>
