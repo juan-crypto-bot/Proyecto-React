@@ -59,6 +59,7 @@ const Home = () => {
           )}
           <div className="pagination__container">
             <Pagination
+              className="paginacion"
               count={totalPages}
               page={page}
               onChange={handleChange}

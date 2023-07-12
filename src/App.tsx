@@ -26,21 +26,6 @@ function App() {
     },
   ]);
 
-  // const router = createBrowserRouter([{
-  //   path:"/",
-  //   element:<HomeLayout/>,
-  //   children:[
-  //     {
-  //       index:true,
-  //     element:<Home/>,
-  //   },
-  //   {
-  //     path:"*",
-  //     element:<Error404/>
-  //   }
-  //   ]
-  // }])
-
   return <RouterProvider router={router} />;
 }
 
