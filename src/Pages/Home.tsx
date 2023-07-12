@@ -8,28 +8,35 @@ import Filtros from "../Components/Filtros";
 import TrabajosService from "../services/trabajos.service";
 import PendingIcon from "@mui/icons-material/Pending";
 import "./HomeStyled.css";
+import { Pagination } from "@mui/material";
 
 const Home = () => {
   // const jobs = useActionData();
   const [myJobs, setMyJobs] = useState<Job[]>([]);
+  const [totalPages, setTotalPages] = useState(1);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
 
   const getTrabajos = () => {
     setIsLoading(true);
-    TrabajosService.GetTrabajos(searchQuery)
-      .then((trabajos) => {
-        setMyJobs(trabajos);
+    TrabajosService.GetTrabajos(searchQuery, page)
+      .then((result) => {
+        setMyJobs(result.jobs);
+        setTotalPages(result.totalPages);
         setIsLoading(false);
       })
       .catch((e) => console.log("Hubo un error", e));
   };
 
-  useEffect(() => {
-    getTrabajos();
-  }, [searchQuery]);
+  const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value);
+  };
 
-  console.log(myJobs);
+  useEffect(() => {
+    console.log(page);
+    getTrabajos();
+  }, [searchQuery, page]);
 
   return (
     <>
@@ -47,6 +54,14 @@ const Home = () => {
               Loading...
             </div>
           )}
+          <div className="pagination__container">
+            <Pagination
+              count={totalPages}
+              page={page}
+              onChange={handleChange}
+              color="primary"
+            />
+          </div>
         </main>
       </div>
     </>
