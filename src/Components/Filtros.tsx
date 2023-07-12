@@ -43,10 +43,12 @@ export default function DateCalendarValue() {
   return (
     <div className="filtros">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DemoContainer components={["DateCalendar", "DateCalendar"]}>
+        <DemoContainer  components={["DateCalendar", "DateCalendar"]}>
           <DemoItem>
             <DateCalendar
               value={value}
+              disableFuture={true}
+              disableHighlightToday={false}
               onChange={(newValue) => setValue(newValue)}
             />
           </DemoItem>
@@ -54,7 +56,7 @@ export default function DateCalendarValue() {
       </LocalizationProvider>
       <button className="filtrar">
         {/* <CalendarMonthIcon color="primary"></CalendarMonthIcon> */}
-        <p className="text">Filtrar</p>
+        <p className="text">FILTRAR</p>
       </button>
     </div>
   );
