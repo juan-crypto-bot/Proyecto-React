@@ -53,7 +53,6 @@ const TrabajosService = {
           },
         })
         .then(async (result) => {
-          console.log(result.data);
           const job = {
             Image: await LogosService.GetLogos(result.data.company),
             Title: result.data.title,

@@ -1,33 +1,4 @@
-// import * as React from 'react';
-// import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-// import dayjs, { Dayjs } from 'dayjs';
-// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-// import { DateField } from '@mui/x-date-pickers/DateField';
-// import "./Styled/FiltrosStyle.css"
-
-// export default function CustomDateFormat() {
-//     const [value, setValue] = React.useState<Dayjs | null>(dayjs(new Date()));
-
-//     return (
-//       <div className='filtros'>
-//       <LocalizationProvider dateAdapter={AdapterDayjs}>
-//         <DemoContainer components={['DateField']}>
-//           <DateField
-//             color="primary"
-//             label="Select Date"
-//             value={value}
-//             disableFuture={true}
-//             onChange={(newValue) => setValue(newValue)}
-//             format="DD-MM-YYYY"
-//           />
-//         </DemoContainer>
-//       </LocalizationProvider>
-//       </div>
-//     );
-//   };
-
-import React, {useState} from "react";
+import React, { useState } from "react";
 import dayjs, { Dayjs } from "dayjs";
 import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -35,10 +6,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import "./Styled/FiltrosStyle.css";
 
-
 export default function DateCalendarValue() {
   const [value, setValue] = React.useState<Dayjs | null>(dayjs(new Date()));
-  // console.log(value?.toDate());
 
   return (
     <div className="filtros">
@@ -55,7 +24,6 @@ export default function DateCalendarValue() {
         </DemoContainer>
       </LocalizationProvider>
       <button className="filtrar">
-        {/* <CalendarMonthIcon color="primary"></CalendarMonthIcon> */}
         <p className="text">FILTRAR</p>
       </button>
     </div>

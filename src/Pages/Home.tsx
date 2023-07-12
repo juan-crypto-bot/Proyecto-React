@@ -9,6 +9,7 @@ import TrabajosService from "../services/trabajos.service";
 import PendingIcon from "@mui/icons-material/Pending";
 import "./HomeStyled.css";
 import { Pagination } from "@mui/material";
+import NoInfo from "../Components/NoInfo";
 
 const Home = () => {
   // const jobs = useActionData();
@@ -17,6 +18,7 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [isInitial, setIsInitial] = useState(true);
 
   const getTrabajos = () => {
     setIsLoading(true);
@@ -25,6 +27,7 @@ const Home = () => {
         setMyJobs(result.jobs);
         setTotalPages(result.totalPages);
         setIsLoading(false);
+        setIsInitial(false);
         console.log(result.jobs);
       })
       .catch((e) => console.log("Hubo un error", e));
@@ -46,9 +49,9 @@ const Home = () => {
           <Filtros />
         </aside>
         <main className="job-list__container">
-          {!isLoading && myJobs.length !== 0 ? (
-            <JobsList myJobs={myJobs} />
-          ) : (
+          {!isLoading && myJobs.length !== 0 && <JobsList myJobs={myJobs} />}
+          {!isLoading && !isInitial && myJobs.length === 0 && <NoInfo />}
+          {isLoading && (
             <div className="loading">
               <PendingIcon fontSize="medium" color="primary"></PendingIcon>
               Loading...
