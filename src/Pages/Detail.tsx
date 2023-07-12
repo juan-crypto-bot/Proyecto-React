@@ -3,7 +3,8 @@ import TrabajosService from "../services/trabajos.service";
 import { Job } from "../Interfaces";
 import { useEffect, useState } from "react";
 import JobDetail from "../Components/JobDetail";
-import "./DetailStyle.css";
+import "./DetailStyled.css";
+import JobDetailAside from "../Components/JobDetailAside";
 
 export const Detail = () => {
   const { idJob } = useParams();
@@ -21,9 +22,7 @@ export const Detail = () => {
 
   return (
     <div className="job-detail">
-      <aside>
-        <Link to="/">Back to search</Link>
-      </aside>
+      <JobDetailAside />
       <main>{job && <JobDetail job={job} />}</main>
     </div>
   );

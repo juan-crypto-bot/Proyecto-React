@@ -4,5 +4,6 @@ export interface Job {
     Company: string,
     Location: string,
     PostDate: Date,
-    Slug: string
+    Slug: string,
+    description:string
 }

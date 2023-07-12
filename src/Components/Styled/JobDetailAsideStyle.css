@@ -1,0 +1,24 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: gray;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.text {
+  color: #2196f3;
+}
+
+.contacto {
+  color: grey;
+}
+
+.mail {
+  color: #2196f3;
+}

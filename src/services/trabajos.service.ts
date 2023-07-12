@@ -13,7 +13,7 @@ const TrabajosService = {
           .get("https://jobsearch4.p.rapidapi.com/api/v1/Jobs/Search", {
             params: {
               PageNumber: page,
-              SearchQuery: `dev + ${search}`,
+              SearchQuery: search ? `${search}` : "dev",
             },
             headers: {
               "X-RapidAPI-Key":
@@ -33,6 +33,7 @@ const TrabajosService = {
                 Location: apiJob.location,
                 PostDate: new Date(apiJob.dateAdded),
                 Slug: apiJob.slug,
+                description: "",
               }))
             );
             resolve({ jobs, totalPages });
@@ -60,6 +61,7 @@ const TrabajosService = {
             Location: result.data.location,
             PostDate: new Date(result.data.dateAdded),
             Slug: result.data.slug,
+            description: result.data.originalPosting,
           };
           resolve(job);
         })

@@ -25,6 +25,7 @@ const Home = () => {
         setMyJobs(result.jobs);
         setTotalPages(result.totalPages);
         setIsLoading(false);
+        console.log(result.jobs);
       })
       .catch((e) => console.log("Hubo un error", e));
   };
@@ -34,7 +35,6 @@ const Home = () => {
   };
 
   useEffect(() => {
-    console.log(page);
     getTrabajos();
   }, [searchQuery, page]);
 

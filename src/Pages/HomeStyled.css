@@ -2,7 +2,6 @@
   margin: 1rem 0;
   display: flex;
   gap: 2rem;
-  
 }
 .filter__container {
   width: 30%;
@@ -14,6 +13,5 @@
 .pagination__container {
   margin-top: 20px;
   display: flex;
-  justify-content: right;
-
+  justify-content:end;
 }
