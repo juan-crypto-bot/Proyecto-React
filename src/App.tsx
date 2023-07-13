@@ -1,22 +1,22 @@
-import { HomeLayout } from "./Layouts/HomeLayout";
+import { Layout } from "./Layouts/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import Home from "./Pages/Home";
+import JobsPage from "./Pages/JobsPage/Jobs.page";
 import Error404 from "./Pages/Error404";
-import { Detail } from "./Pages/Detail";
+import { JobDetailPage } from "./Pages/DetailPage/JobDetail.page";
 
 function App() {
   const router = createBrowserRouter([
     {
-      element: <HomeLayout />,
+      element: <Layout />,
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <JobsPage />,
         },
         {
           path: "/:idJob",
-          element: <Detail />,
+          element: <JobDetailPage />,
         },
         {
           path: "*",
