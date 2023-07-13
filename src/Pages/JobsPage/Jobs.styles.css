@@ -1,0 +1,22 @@
+.jobs {
+  margin: 1rem 0;
+  display: flex;
+  gap: 2rem;
+  height: 100%;
+}
+.filter__container {
+  width: 30%;
+}
+.job-list__container {
+  flex-grow: 1;
+  height: 100%;
+}
+.pagination__container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+}

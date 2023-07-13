@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Job } from "../Interfaces";
+import { Job } from "../model/Job";
 import LogosService from "./Logos.service";
 
 const TrabajosService = {

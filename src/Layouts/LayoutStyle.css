@@ -1,0 +1,10 @@
+.outlet {
+  margin: 0 auto;
+  width: 80%;
+  flex-grow: 1;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

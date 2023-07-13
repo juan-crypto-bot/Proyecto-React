@@ -1,0 +1,6 @@
+.job-detail {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 4fr;
+  margin: 1rem 0;
+}
