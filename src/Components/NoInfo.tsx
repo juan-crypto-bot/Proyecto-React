@@ -14,10 +14,7 @@ function NoInfo() {
         <p>Datos no encontrados.</p>
       </Alert>
       <div style={{ margin: "1rem auto", textAlign: "center" }}>
-        <Link to="/home" className="volver">
-          {/* <IconButton color="primary">
-            <HomeIcon></HomeIcon>
-          </IconButton> */}
+        <Link to="/" className="volver">
           Volver al inicio
         </Link>
       </div>

@@ -16,3 +16,7 @@
   display: flex;
   justify-content: end;
 }
+.loader {
+  display: flex;
+  justify-content: center;
+}

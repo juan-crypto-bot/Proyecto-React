@@ -10,6 +10,7 @@ import PendingIcon from "@mui/icons-material/Pending";
 import "./HomeStyled.css";
 import { Pagination } from "@mui/material";
 import NoInfo from "../Components/NoInfo";
+import Loader from "../Components/Loader";
 
 const Home = () => {
   // const jobs = useActionData();
@@ -52,10 +53,13 @@ const Home = () => {
           {!isLoading && myJobs.length !== 0 && <JobsList myJobs={myJobs} />}
           {!isLoading && !isInitial && myJobs.length === 0 && <NoInfo />}
           {isLoading && (
-            <div className="loading">
-              <PendingIcon fontSize="medium" color="primary"></PendingIcon>
-              Loading...
+            <div className="loader">
+              <Loader />
             </div>
+            // <div className="loading">
+            //   <PendingIcon fontSize="medium" color="primary"></PendingIcon>
+            //   Loading...
+            // </div>
           )}
           <div className="pagination__container">
             <Pagination
