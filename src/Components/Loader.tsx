@@ -9,6 +9,7 @@ function Loader() {
         className="player"
         loop
         autoplay
+        speed={2.2}
         style={{ width: "50%", height: "auto" }}
       />
     </>

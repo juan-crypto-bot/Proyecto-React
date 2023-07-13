@@ -2,10 +2,14 @@ import React from "react";
 import { Alert, AlertTitle, IconButton } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
+import { useNavigate } from "react-router-dom";
 import "./Styled/NoInfoStyle.css";
 
-function NoInfo() {
+
+
+function NoInfo({ handleBackToHome }:) {
   const url = useLocation();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -14,9 +18,9 @@ function NoInfo() {
         <p>Datos no encontrados.</p>
       </Alert>
       <div style={{ margin: "1rem auto", textAlign: "center" }}>
-        <Link to="/" className="volver">
-          Volver al inicio
-        </Link>
+        <button onClick={handleBackToHome} className="volver">
+          <p className="volvertext">Volver al inicio</p>
+        </button>
       </div>
     </>
   );
