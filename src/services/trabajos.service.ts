@@ -14,8 +14,7 @@ const TrabajosService = {
           .get("https://jobsearch4.p.rapidapi.com/api/v1/Jobs/Search", {
             params: {
               PageNumber: page,
-              SearchQuery: search ? `${search}` : "dev",
-              Date: date
+              SearchQuery: `${search} + ${date} + dev`,
             },
             headers: {
               "X-RapidAPI-Key":
@@ -28,15 +27,18 @@ const TrabajosService = {
             const totalPages = result.data.totalPages;
             const apiJobs: any[] = result.data.data;
             const jobs: Job[] = await Promise.all(
-              apiJobs.map(async (apiJob) => ({
-                Image: await LogosService.GetLogos(apiJob.company),
-                Title: apiJob.title,
-                Company: apiJob.company,
-                Location: apiJob.location,
-                PostDate: new Date(apiJob.dateAdded),
-                Slug: apiJob.slug,
-                description: "",
-              }))
+              apiJobs.map(async (apiJob) => {
+                const arrayDate = apiJob.postDate.split(" ")[0].split("/");
+                return {
+                  Image: await LogosService.GetLogos(apiJob.company),
+                  Title: apiJob.title,
+                  Company: apiJob.company,
+                  Location: apiJob.location,
+                  PostDate: new Date(arrayDate[2], arrayDate[1], arrayDate[0]),
+                  Slug: apiJob.slug,
+                  description: "",
+                };
+              })
             );
             resolve({ jobs, totalPages });
           })

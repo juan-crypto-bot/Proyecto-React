@@ -13,8 +13,11 @@ const JobCard = (job: Job) => {
         <img className="image" src="GitHubIcon.jpg" />
       )}
       <div className="info">
-        <p className="company">{job.Company}</p>
-        <p className="title">{job.Title}</p>
+        <p className="company">Empresa: {job.Company}</p>
+        <p className="title">Puesto: {job.Title}</p>
+        <p className="date">
+          Fecha de publicación: {job.PostDate.toISOString()}
+        </p>
       </div>
       <Link to={`${job.Slug}`} className="boton">
         <IconButton color="primary" type="submit">
