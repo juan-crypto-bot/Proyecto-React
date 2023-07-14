@@ -18,6 +18,7 @@ const JobsPage = () => {
   const [myJobs, setMyJobs] = useState<Job[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [date, setDate] = useState<string>("");
 
   const [pagination, setPagination] = useState<Pagination>({
     page: 1,
@@ -26,7 +27,7 @@ const JobsPage = () => {
 
   const getTrabajos = () => {
     setIsLoading(true);
-    TrabajosService.GetTrabajos(searchQuery, pagination.page)
+    TrabajosService.GetTrabajos(searchQuery, pagination.page, date)
       .then((result) => {
         setMyJobs(result.jobs);
         setPagination((prev) => ({ ...prev, totalPages: result.totalPages }));
@@ -42,14 +43,14 @@ const JobsPage = () => {
 
   useEffect(() => {
     getTrabajos();
-  }, [searchQuery, pagination.page]);
+  }, [searchQuery, pagination.page, date]);
 
   return (
     <>
       <Buscador setSearchQuery={setSearchQuery} />
       <div className="jobs">
         <aside className="filter__container">
-          <Filtros />
+          <Filtros setDate={setDate} />
         </aside>
         <main className="job-list__container">
           {!isLoading && myJobs.length !== 0 && <JobsList myJobs={myJobs} />}

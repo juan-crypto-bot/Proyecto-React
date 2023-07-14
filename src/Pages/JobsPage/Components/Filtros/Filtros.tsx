@@ -6,8 +6,17 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import "./Filtros.styles.css";
 
-export default function DateCalendarValue() {
+interface FiltrosProps {
+  setDate: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const Filtros = ({ setDate }: FiltrosProps) => {
   const [value, setValue] = useState<Dayjs | null>(dayjs(new Date()));
+
+  function handleDateChange() {
+    setDate(value?.toString() || "");
+    console.log(value?.toString());
+  }
 
   return (
     <div className="filtros">
@@ -23,9 +32,10 @@ export default function DateCalendarValue() {
           </DemoItem>
         </DemoContainer>
       </LocalizationProvider>
-      <button className="filtrar">
+      <button className="filtrar" onClick={handleDateChange}>
         <p className="text">FILTRAR</p>
       </button>
     </div>
   );
-}
+};
+export default Filtros;
