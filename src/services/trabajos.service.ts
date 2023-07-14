@@ -5,7 +5,8 @@ import LogosService from "./Logos.service";
 const TrabajosService = {
   GetTrabajos: (
     search: string,
-    page: number
+    page: number,
+    date: string
   ): Promise<{ jobs: Job[]; totalPages: number }> => {
     return new Promise<{ jobs: Job[]; totalPages: number }>(
       (resolve, reject) => {
@@ -14,6 +15,7 @@ const TrabajosService = {
             params: {
               PageNumber: page,
               SearchQuery: search ? `${search}` : "dev",
+              Date: date
             },
             headers: {
               "X-RapidAPI-Key":

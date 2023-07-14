@@ -9,7 +9,7 @@ interface BuscadorProps {
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Buscador = ({ setSearchQuery }: BuscadorProps) => {
+const Buscador = ({ setSearchQuery}: BuscadorProps) => {
   const [search, setSearch] = useState("");
   function handleSearchChange(e: React.ChangeEvent<HTMLInputElement>) {
     setSearch(e.target.value);
