@@ -5,17 +5,24 @@ import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import SearchIcon from "@mui/icons-material/Search";
 import "./Buscador.styles.css";
 
-interface BuscadorProps {
-  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+interface Pagination {
+  page: number;
+  totalPages: number;
 }
 
-const Buscador = ({ setSearchQuery }: BuscadorProps) => {
+interface BuscadorProps {
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+  setPagination: React.Dispatch<React.SetStateAction<Pagination>>;
+}
+
+const Buscador = (props: BuscadorProps) => {
   const [search, setSearch] = useState("");
   function handleSearchChange(e: React.ChangeEvent<HTMLInputElement>) {
     setSearch(e.target.value);
   }
   function handleSearchQueryChange() {
-    setSearchQuery(search);
+    props.setSearchQuery(search);
+    props.setPagination((prev) => ({ ...prev, page: 1 }));
   }
 
   return (
@@ -43,9 +50,6 @@ const Buscador = ({ setSearchQuery }: BuscadorProps) => {
           <SearchIcon className="search-icon" />
         </IconButton>
       </div>
-      {/* <input type="text" id="searchQuery" name="searchQuery" value={search}
-            onChange={handleSearchChange}/>
-            <button>Buscar</button> */}
     </div>
   );
 };

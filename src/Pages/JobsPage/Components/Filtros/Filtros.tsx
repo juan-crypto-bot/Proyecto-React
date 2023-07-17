@@ -33,7 +33,7 @@ const Filtros = ({ setDate }: FiltrosProps) => {
         </DemoContainer>
       </LocalizationProvider>
       <button className="filtrar" onClick={handleDateChange}>
-        <p className="text">FILTRAR</p>
+        <p className="text">FILTER</p>
       </button>
     </div>
   );

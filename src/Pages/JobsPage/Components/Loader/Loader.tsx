@@ -4,11 +4,11 @@ function Loader() {
   return (
     <>
       <Player
-        src="https://lottie.host/20f2fe01-65f1-4caa-9c3e-a3a69dba81d4/5KNh1zkUab.json"
+        src="https://lottie.host/3e5cd116-943b-4032-bc26-4ccaa6b89d37/kzUUsqzUaf.json"
         className="player"
         loop
         autoplay
-        speed={2.2}
+        speed={1}
         style={{ width: "50%", height: "auto" }}
       />
     </>
