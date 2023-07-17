@@ -5,16 +5,16 @@ import LogosService from "./Logos.service";
 const TrabajosService = {
   GetTrabajos: (
     search: string,
-    page: number,
-    date: string
+    page: number
   ): Promise<{ jobs: Job[]; totalPages: number }> => {
     return new Promise<{ jobs: Job[]; totalPages: number }>(
       (resolve, reject) => {
         axios
-          .get("https://jobsearch4.p.rapidapi.com/api/v1/Jobs/Search", {
+          .get("https://jobsearch4.p.rapidapi.com/api/v2/Jobs/Search", {
             params: {
               PageNumber: page,
-              SearchQuery: `${search} + ${date} + dev`,
+              SearchQuery: search.length > 0 ? search : "dev",
+              PageSize: 10,
             },
             headers: {
               "X-RapidAPI-Key":
@@ -49,7 +49,7 @@ const TrabajosService = {
   GetTrabajoById: (idJob: string): Promise<Job> => {
     return new Promise<Job>((resolve, reject) => {
       axios
-        .get(`https://jobsearch4.p.rapidapi.com/api/v1/Jobs/${idJob}`, {
+        .get(`https://jobsearch4.p.rapidapi.com/api/v2/Jobs/${idJob}`, {
           headers: {
             "X-RapidAPI-Key":
               "b5c88dc99cmshe9441e41e8c805ap120231jsn7b7200c615ce",
