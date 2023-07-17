@@ -22,8 +22,14 @@ export const JobDetailPage = () => {
 
   return (
     <div className="job-detail">
-      <JobDetailAside />
-      <main>{job && <JobDetail job={job} />}</main>
+      {job && (
+        <>
+          <JobDetailAside job={job} />
+          <main>
+            <JobDetail job={job} />
+          </main>
+        </>
+      )}
     </div>
   );
 };

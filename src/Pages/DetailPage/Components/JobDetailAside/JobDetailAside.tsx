@@ -1,8 +1,12 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Link } from "react-router-dom";
 import "./JobDetailAside.styles.css";
+import { Job } from "../../../../model/Job";
 
-const JobDetailAside = () => {
+type JobDetailProps = { job: Job };
+
+const JobDetailAside = ({ job }: JobDetailProps) => {
+  console.log(job);
   return (
     <div className="aside">
       <div className="back">
@@ -11,19 +15,9 @@ const JobDetailAside = () => {
           Back to search
         </Link>
       </div>
-      <h3 className="apply">HOW TO APPLY</h3>
-      <p className="contacto">
-        Please email a copy of your resume and online portfolio to
-        <Link to="" className="mail">
-          {" "}
-          wes@kasista.com
-        </Link>{" "}
-        & CC
-        <Link to="" className="mail">
-          {" "}
-          eric@kasista.com
-        </Link>
-      </p>
+      <a href={job.Url} className="job-buttom">
+        Show employment
+      </a>
     </div>
   );
 };

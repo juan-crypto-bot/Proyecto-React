@@ -7,23 +7,25 @@ import "./JobCard.styles.css";
 const JobCard = (job: Job) => {
   return (
     <div className="job-card">
-      {job.Image ? (
-        <img className="image" src={job.Image} />
-      ) : (
-        <img className="image" src="GitHubIcon.jpg" />
-      )}
+      <div className="contenedor-img">
+        {job.Image ? (
+          <img className="image" src={job.Image} />
+        ) : (
+          <img className="image" src="GitHubIcon.jpg" />
+        )}
+      </div>
       <div className="info">
-        <p className="company">Empresa: {job.Company}</p>
-        <p className="title">Puesto: {job.Title}</p>
+        <p className="company">Company: {job.Company}</p>
+        <p className="title">Job: {job.Title}</p>
         <p className="date">
-          Fecha de publicación: {job.PostDate.toISOString()}
+          Post Date: {job.PostDate.toDateString()}
         </p>
       </div>
       <Link to={`${job.Slug}`} className="boton">
         <IconButton color="primary" type="submit">
           <AddCircleIcon></AddCircleIcon>
         </IconButton>
-        Ver más
+        Show more
       </Link>
     </div>
   );

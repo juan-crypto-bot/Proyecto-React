@@ -33,10 +33,10 @@ const TrabajosService = {
                   Image: await LogosService.GetLogos(apiJob.company),
                   Title: apiJob.title,
                   Company: apiJob.company,
-                  Location: apiJob.location,
                   PostDate: new Date(arrayDate[2], arrayDate[1], arrayDate[0]),
                   Slug: apiJob.slug,
-                  description: "",
+                  Url: apiJob.url,
+                  Description: "",
                 };
               })
             );
@@ -64,7 +64,8 @@ const TrabajosService = {
             Location: result.data.location,
             PostDate: new Date(result.data.dateAdded),
             Slug: result.data.slug,
-            description: result.data.originalPosting,
+            Url: result.data.url,
+            Description: result.data.originalPosting,
           };
           resolve(job);
         })

@@ -48,7 +48,7 @@ const JobsPage = () => {
 
   return (
     <>
-      <Buscador setSearchQuery={setSearchQuery} />
+      <Buscador setSearchQuery={setSearchQuery} setPagination={setPagination} />
       <div className="jobs">
         <aside className="filter__container">
           <Filtros setDate={setDate} />
