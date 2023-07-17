@@ -15,7 +15,7 @@ const Filtros = ({ setDate }: FiltrosProps) => {
 
   function handleDateChange() {
     setDate(value?.toString() || "");
-    console.log(value?.toString());
+    console.log(value?.toISOString());
   }
 
   return (

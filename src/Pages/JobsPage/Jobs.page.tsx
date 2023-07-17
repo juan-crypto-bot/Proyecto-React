@@ -27,7 +27,7 @@ const JobsPage = () => {
 
   const getTrabajos = () => {
     setIsLoading(true);
-    TrabajosService.GetTrabajos(searchQuery, pagination.page, date)
+    TrabajosService.GetTrabajos(searchQuery, pagination.page)
       .then((result) => {
         setMyJobs(result.jobs);
         setPagination((prev) => ({ ...prev, totalPages: result.totalPages }));
@@ -43,7 +43,8 @@ const JobsPage = () => {
 
   useEffect(() => {
     getTrabajos();
-  }, [searchQuery, pagination.page, date]);
+    console.log(searchQuery);
+  }, [searchQuery, pagination.page]);
 
   return (
     <>
