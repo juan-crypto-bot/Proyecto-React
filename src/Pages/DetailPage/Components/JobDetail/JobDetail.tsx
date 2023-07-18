@@ -6,7 +6,7 @@ type JobDetailProps = { job: Job };
 const JobDetail = ({ job }: JobDetailProps) => {
   return (
     <div className="detail">
-      <h2 className="titulo-detail">{job.Title}</h2>
+      <h2 className="title-detail">{job.Title}</h2>
       <h3 className="company-detail">{job.Company}</h3>
       <div className="job-detail-company">
         {job.Image ? (

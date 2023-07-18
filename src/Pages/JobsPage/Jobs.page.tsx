@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import Buscador from "./Components/Buscador/Buscador";
+import Buscador from "./Components/Seeker/Seekeer";
 import JobsList from "./Components/JobList/JobsList";
 import { Job } from "../../model/Job";
-import Filtros from "./Components/Filtros/Filtros";
-import TrabajosService from "../../services/trabajos.service";
+import Filtros from "./Components/Filters/Filters";
+import TrabajosService from "../../services/Jobs.service";
 import "./Jobs.styles.css";
 import { Pagination } from "@mui/material";
 import NoInfo from "../../Components/NoInfo";
@@ -43,7 +43,11 @@ const JobsPage = () => {
 
   useEffect(() => {
     getTrabajos();
-    console.log(searchQuery);
+    const lsQuery = localStorage.getItem("search");
+    setSearchQuery(lsQuery ? lsQuery : "");
+    if (lsQuery) {
+      setSearchQuery(lsQuery);
+    }
   }, [searchQuery, pagination.page]);
 
   return (
@@ -63,10 +67,11 @@ const JobsPage = () => {
           )}
           <div className="pagination__container">
             <Pagination
-              className="paginacion"
+              className="pagination"
               count={pagination.totalPages}
               page={pagination.page}
-              /* boundaryCount={1} */
+              siblingCount={0}
+              boundaryCount={1}
               onChange={handleChange}
               color="primary"
             />

@@ -23,7 +23,11 @@
     justify-content: center;
   }
 }
-
+.pagination{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
 @media screen and (min-width: 375px) and (max-width: 1000px) {
   .jobs {
     margin: 1rem 0;

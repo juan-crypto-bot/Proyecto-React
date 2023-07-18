@@ -1,9 +1,9 @@
-import axios from "axios";
 import { Job } from "../model/Job";
-import LogosService from "./Logos.service";
 import HttpHandler from "../utils/HttpHandler";
+import JobAdapter from "../Adapters/JobAdapter";
+import JobAdapterFull from "../Adapters/JobAdapterFull";
 
-const TrabajosService = {
+const JobsService = {
   GetTrabajos: (
     search: string,
     page: number
@@ -19,6 +19,7 @@ const TrabajosService = {
               PageSize: 10,
             },
             headers: {
+              //como gestionar esto
               "X-RapidAPI-Key":
                 "b5c88dc99cmshe9441e41e8c805ap120231jsn7b7200c615ce",
               "X-RapidAPI-Host": "jobsearch4.p.rapidapi.com",
@@ -26,23 +27,8 @@ const TrabajosService = {
           }
         )
           .then(async (result) => {
-            console.log(result);
             const totalPages = result.data.totalPages;
-            const apiJobs: any[] = result.data.data;
-            const jobs: Job[] = await Promise.all(
-              apiJobs.map(async (apiJob) => {
-                const arrayDate = apiJob.postDate.split(" ")[0].split("/");
-                return {
-                  Image: await LogosService.GetLogos(apiJob.company),
-                  Title: apiJob.title,
-                  Company: apiJob.company,
-                  PostDate: new Date(arrayDate[2], arrayDate[1], arrayDate[0]),
-                  Slug: apiJob.slug,
-                  Url: apiJob.url,
-                  Description: "",
-                };
-              })
-            );
+            const jobs = JobAdapter(result);
             resolve({ jobs, totalPages });
           })
           .catch((error) => reject(error));
@@ -62,16 +48,7 @@ const TrabajosService = {
         }
       )
         .then(async (result) => {
-          const job = {
-            Image: await LogosService.GetLogos(result.data.company),
-            Title: result.data.title,
-            Company: result.data.company,
-            Location: result.data.location,
-            PostDate: new Date(result.data.dateAdded),
-            Slug: result.data.slug,
-            Url: result.data.url,
-            Description: result.data.originalPosting,
-          };
+          const job = JobAdapterFull(result);
           resolve(job);
         })
         .catch((error) => reject(error));
@@ -79,4 +56,4 @@ const TrabajosService = {
   },
 };
 
-export default TrabajosService;
+export default JobsService;
