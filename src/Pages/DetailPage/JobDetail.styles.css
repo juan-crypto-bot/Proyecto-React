@@ -1,6 +1,18 @@
-.job-detail {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr 4fr;
-  margin: 1rem 0;
+@media screen and (min-width: 375px) and (max-width: 805px) {
+  .job-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* margin: 1rem 0; */
+  }
+}
+
+@media screen and (min-width: 805px) and (max-width: 2000px) {
+  .job-detail {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 4fr;
+    margin: 1rem 0;
+  }
 }
