@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Job } from "../model/Job";
 import LogosService from "./Logos.service";
+import HttpHandler from "../utils/HttpHandler";
 
 const TrabajosService = {
   GetTrabajos: (
@@ -9,8 +10,9 @@ const TrabajosService = {
   ): Promise<{ jobs: Job[]; totalPages: number }> => {
     return new Promise<{ jobs: Job[]; totalPages: number }>(
       (resolve, reject) => {
-        axios
-          .get("https://jobsearch4.p.rapidapi.com/api/v2/Jobs/Search", {
+        HttpHandler.get(
+          "https://jobsearch4.p.rapidapi.com/api/v2/Jobs/Search",
+          {
             params: {
               PageNumber: page,
               SearchQuery: search.length > 0 ? search : "dev",
@@ -21,7 +23,8 @@ const TrabajosService = {
                 "b5c88dc99cmshe9441e41e8c805ap120231jsn7b7200c615ce",
               "X-RapidAPI-Host": "jobsearch4.p.rapidapi.com",
             },
-          })
+          }
+        )
           .then(async (result) => {
             console.log(result);
             const totalPages = result.data.totalPages;
@@ -48,14 +51,16 @@ const TrabajosService = {
   },
   GetTrabajoById: (idJob: string): Promise<Job> => {
     return new Promise<Job>((resolve, reject) => {
-      axios
-        .get(`https://jobsearch4.p.rapidapi.com/api/v2/Jobs/${idJob}`, {
+      HttpHandler.get(
+        `https://jobsearch4.p.rapidapi.com/api/v2/Jobs/${idJob}`,
+        {
           headers: {
             "X-RapidAPI-Key":
               "b5c88dc99cmshe9441e41e8c805ap120231jsn7b7200c615ce",
             "X-RapidAPI-Host": "jobsearch4.p.rapidapi.com",
           },
-        })
+        }
+      )
         .then(async (result) => {
           const job = {
             Image: await LogosService.GetLogos(result.data.company),
