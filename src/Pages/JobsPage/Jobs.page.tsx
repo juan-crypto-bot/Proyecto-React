@@ -66,6 +66,7 @@ const JobsPage = () => {
               className="paginacion"
               count={pagination.totalPages}
               page={pagination.page}
+              /* boundaryCount={1} */
               onChange={handleChange}
               color="primary"
             />
