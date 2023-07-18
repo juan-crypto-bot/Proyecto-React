@@ -10,11 +10,11 @@ const Error404 = () => {
       <Alert severity="error" style={{ maxWidth: 752, margin: "2rem auto 0" }}>
         <AlertTitle>Error 404</AlertTitle>
         <p>
-          Recurso{" "}
+          Resource{" "}
           <b>
             <i>{url.pathname}</i>
           </b>{" "}
-          no encontrado.
+          not found.
         </p>
       </Alert>
       <div style={{ margin: "1rem auto", textAlign: "center" }}>

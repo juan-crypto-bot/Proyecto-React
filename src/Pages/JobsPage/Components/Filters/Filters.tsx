@@ -4,13 +4,13 @@ import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import "./Filtros.styles.css";
+import "./Filters.styles.css";
 
 interface FiltrosProps {
   setDate: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Filtros = ({ setDate }: FiltrosProps) => {
+const Filters = ({ setDate }: FiltrosProps) => {
   const [value, setValue] = useState<Dayjs | null>(dayjs(new Date()));
 
   function handleDateChange() {
@@ -19,7 +19,7 @@ const Filtros = ({ setDate }: FiltrosProps) => {
   }
 
   return (
-    <div className="filtros">
+    <div className="filters">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DemoContainer components={["DateCalendar", "DateCalendar"]}>
           <DemoItem>
@@ -32,10 +32,10 @@ const Filtros = ({ setDate }: FiltrosProps) => {
           </DemoItem>
         </DemoContainer>
       </LocalizationProvider>
-      <button className="filtrar" onClick={handleDateChange}>
+      <button className="button-filter" onClick={handleDateChange}>
         <p className="text">FILTER</p>
       </button>
     </div>
   );
 };
-export default Filtros;
+export default Filters;

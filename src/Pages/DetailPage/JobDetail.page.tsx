@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import TrabajosService from "../../services/trabajos.service";
+import TrabajosService from "../../services/Jobs.service";
 import { Job } from "../../model/Job";
 import { useEffect, useState } from "react";
 import JobDetail from "./Components/JobDetail/JobDetail";
@@ -14,7 +14,7 @@ export const JobDetailPage = () => {
       .then((result) => {
         setJob(result);
       })
-      .catch((e) => console.log("Hubo un error", e));
+      .catch((e) => console.log("There was a mistake", e));
   }
   useEffect(() => {
     getTrabajo();

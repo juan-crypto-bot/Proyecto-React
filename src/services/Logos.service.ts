@@ -1,12 +1,11 @@
-import axios from "axios";
 import HttpHandler from "../utils/HttpHandler";
 
 const LogosService = {
-  GetLogos: (busqueda: string): Promise<string> => {
+  GetLogos: (search: string): Promise<string> => {
     return new Promise<string>((resolve, reject) => {
       HttpHandler.get("https://api.api-ninjas.com/v1/logo", {
         params: {
-          name: busqueda,
+          name: search,
         },
         headers: {
           "Content-Type": "application/json",
