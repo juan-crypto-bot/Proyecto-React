@@ -12,7 +12,7 @@ const JobDetail = ({ job }: JobDetailProps) => {
         {job.Image ? (
           <img className="image-detail-company" src={job.Image} />
         ) : (
-          <img className="image-detail-company" src="" />
+          <img className="image-detail-company" src="GitHubIcon.jpg" />
         )}
       </div>
       <div

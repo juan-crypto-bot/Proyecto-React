@@ -5,6 +5,8 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import "./Filters.styles.css";
+import Dropdown from "react-dropdown";
+import { DatePicker } from "@mui/x-date-pickers";
 
 interface FiltrosProps {
   setDate: React.Dispatch<React.SetStateAction<string>>;
@@ -19,8 +21,20 @@ const Filters = ({ setDate }: FiltrosProps) => {
   }
 
   return (
+    
     <div className="filters">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DatePicker']}>
+        <DatePicker 
+        label="Choose Date" 
+        value={value}
+        disableFuture={true}
+        disableHighlightToday={false}
+        onChange={(newValue) => setValue(newValue)}
+        />
+      </DemoContainer>
+    </LocalizationProvider>
+      {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DemoContainer components={["DateCalendar", "DateCalendar"]}>
           <DemoItem>
             <DateCalendar
@@ -31,7 +45,7 @@ const Filters = ({ setDate }: FiltrosProps) => {
             />
           </DemoItem>
         </DemoContainer>
-      </LocalizationProvider>
+      </LocalizationProvider> */}
       <button className="button-filter" onClick={handleDateChange}>
         <p className="text">FILTER</p>
       </button>
