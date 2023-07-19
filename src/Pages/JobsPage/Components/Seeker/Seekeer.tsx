@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { TextField, IconButton } from "@mui/material";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
@@ -16,14 +16,21 @@ interface SeekerProps {
 }
 
 const Seeker = (props: SeekerProps) => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(localStorage.getItem("search") ?? "");
+  useEffect(() => {
+    props.setSearchQuery(search);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("search", search);
+  }, [search]);
+
   function handleSearchChange(e: React.ChangeEvent<HTMLInputElement>) {
     setSearch(e.target.value);
   }
   function handleSearchQueryChange() {
     props.setSearchQuery(search);
     props.setPagination((prev) => ({ ...prev, page: 1 }));
-    localStorage.setItem("search", JSON.stringify(search));
   }
 
   return (

@@ -7,7 +7,6 @@ const JobAdapter = (result: any) => {
   const jobs: Job[] = apiJobs.map((apiJob) => {
     const arrayDate = apiJob.postDate.split(" ")[0].split("/");
     return {
-      Image: "",
       Title: apiJob.title,
       Company: apiJob.company,
       PostDate: new Date(arrayDate[2], arrayDate[1], arrayDate[0]),

@@ -1,4 +1,5 @@
 import { Job } from "../../../../model/Job";
+import { JobImage } from "../../../JobsPage/Components/JobImage/JobImage";
 import "./JobDetailStyle.css";
 
 type JobDetailProps = { job: Job };
@@ -9,11 +10,7 @@ const JobDetail = ({ job }: JobDetailProps) => {
       <h2 className="title-detail">{job.Title}</h2>
       <h3 className="company-detail">{job.Company}</h3>
       <div className="job-detail-company">
-        {job.Image ? (
-          <img className="image-detail-company" src={job.Image} />
-        ) : (
-          <img className="image-detail-company" src="GitHubIcon.jpg" />
-        )}
+        <JobImage company={job.Company} />
       </div>
       <div
         className="info-detail"

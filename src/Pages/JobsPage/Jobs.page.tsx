@@ -43,11 +43,6 @@ const JobsPage = () => {
 
   useEffect(() => {
     getTrabajos();
-    const lsQuery = localStorage.getItem("search");
-    setSearchQuery(lsQuery ? lsQuery : "");
-    if (lsQuery) {
-      setSearchQuery(lsQuery);
-    }
   }, [searchQuery, pagination.page]);
 
   return (
