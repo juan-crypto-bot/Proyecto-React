@@ -37,4 +37,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+  .job-list__container{
+    width: 100%;
+  }
 }

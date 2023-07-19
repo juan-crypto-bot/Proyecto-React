@@ -17,7 +17,9 @@ interface Pagination {
 const JobsPage = () => {
   const [myJobs, setMyJobs] = useState<Job[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState<string>(
+    localStorage.getItem("search") ?? ""
+  );
   const [date, setDate] = useState<string>("");
 
   const [pagination, setPagination] = useState<Pagination>({
@@ -32,7 +34,6 @@ const JobsPage = () => {
         setMyJobs(result.jobs);
         setPagination((prev) => ({ ...prev, totalPages: result.totalPages }));
         setIsLoading(false);
-        console.log(result.jobs);
       })
       .catch((e) => console.log("Hubo un error", e));
   };
@@ -43,11 +44,16 @@ const JobsPage = () => {
 
   useEffect(() => {
     getTrabajos();
+    localStorage.setItem("search", searchQuery);
   }, [searchQuery, pagination.page]);
 
   return (
     <>
-      <Buscador setSearchQuery={setSearchQuery} setPagination={setPagination} />
+      <Buscador
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        setPagination={setPagination}
+      />
       <div className="jobs">
         <aside className="filter__container">
           <Filtros setDate={setDate} />

@@ -11,19 +11,13 @@ interface Pagination {
 }
 
 interface SeekerProps {
+  searchQuery: string;
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
   setPagination: React.Dispatch<React.SetStateAction<Pagination>>;
 }
 
 const Seeker = (props: SeekerProps) => {
-  const [search, setSearch] = useState(localStorage.getItem("search") ?? "");
-  useEffect(() => {
-    props.setSearchQuery(search);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("search", search);
-  }, [search]);
+  const [search, setSearch] = useState<string>(props.searchQuery);
 
   function handleSearchChange(e: React.ChangeEvent<HTMLInputElement>) {
     setSearch(e.target.value);

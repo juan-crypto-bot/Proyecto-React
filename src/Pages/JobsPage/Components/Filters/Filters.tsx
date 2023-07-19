@@ -21,23 +21,23 @@ const Filters = ({ setDate }: FiltrosProps) => {
   }
 
   return (
-    
     <div className="filters">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['DatePicker']}>
-        <DatePicker 
-        label="Choose Date" 
-        value={value}
-        disableFuture={true}
-        disableHighlightToday={false}
-        onChange={(newValue) => setValue(newValue)}
-        />
-      </DemoContainer>
-    </LocalizationProvider>
-      {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DemoContainer components={["DatePicker"]}>
+          <DatePicker
+            className="basic"
+            label="Choose Date"
+            value={value}
+            disableFuture={true}
+            disableHighlightToday={false}
+            onChange={(newValue) => setValue(newValue)}
+          />
+        </DemoContainer>
+
         <DemoContainer components={["DateCalendar", "DateCalendar"]}>
           <DemoItem>
             <DateCalendar
+              className="pro"
               value={value}
               disableFuture={true}
               disableHighlightToday={false}
@@ -45,7 +45,7 @@ const Filters = ({ setDate }: FiltrosProps) => {
             />
           </DemoItem>
         </DemoContainer>
-      </LocalizationProvider> */}
+      </LocalizationProvider>
       <button className="button-filter" onClick={handleDateChange}>
         <p className="text">FILTER</p>
       </button>

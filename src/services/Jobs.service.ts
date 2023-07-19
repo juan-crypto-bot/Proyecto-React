@@ -21,11 +21,6 @@ const JobsService = {
             headers: {
               "X-RapidAPI-Key": import.meta.env.VITE_RAPIAPI_KEY,
               "X-RapidAPI-Host": import.meta.env.VITE_RAPIAPI_HOST,
-
-              //como gestionar esto
-              // "X-RapidAPI-Key":
-              //   "b5c88dc99cmshe9441e41e8c805ap120231jsn7b7200c615ce",
-              // "X-RapidAPI-Host": "jobsearch4.p.rapidapi.com",
             },
           }
         )
@@ -44,9 +39,8 @@ const JobsService = {
         `https://jobsearch4.p.rapidapi.com/api/v2/Jobs/${idJob}`,
         {
           headers: {
-            "X-RapidAPI-Key":
-              "b5c88dc99cmshe9441e41e8c805ap120231jsn7b7200c615ce",
-            "X-RapidAPI-Host": "jobsearch4.p.rapidapi.com",
+            "X-RapidAPI-Key": import.meta.env.VITE_RAPIAPI_KEY,
+            "X-RapidAPI-Host": import.meta.env.VITE_RAPIAPI_HOST,
           },
         }
       )

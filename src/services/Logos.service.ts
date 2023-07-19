@@ -8,8 +8,7 @@ const LogosService = {
           name: search,
         },
         headers: {
-          "Content-Type": "application/json",
-          "X-Api-Key": "7ydX8tN2lIHYA6ozxhkvSg==yrQeOhzY28VuOj2E",
+          "X-Api-Key": import.meta.env.VITE_LOGO_KEY,
         },
       })
         .then((result) => {

@@ -17,7 +17,7 @@ export const JobImage = ({ company }: { company: string }) => {
   };
   useEffect(() => {
     getJobImage();
-  }, []);
+  }, [company]);
   return (
     <>
       {!isLoading ? (
