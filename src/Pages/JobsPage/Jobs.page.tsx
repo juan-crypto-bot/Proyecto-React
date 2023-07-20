@@ -8,6 +8,7 @@ import "./Jobs.styles.css";
 import { Pagination } from "@mui/material";
 import NoInfo from "../../Components/NoInfo";
 import Loader from "./Components/Loader/Loader";
+import Favourite from "./Components/Favourite/Favourite";
 
 interface Pagination {
   page: number;
@@ -57,6 +58,9 @@ const JobsPage = () => {
       <div className="jobs">
         <aside className="filter__container">
           <Filtros setDate={setDate} />
+          <aside className="fav">
+            <Favourite />
+          </aside>
         </aside>
         <main className="job-list__container">
           {!isLoading && myJobs.length !== 0 && <JobsList myJobs={myJobs} />}
