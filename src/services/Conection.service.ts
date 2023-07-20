@@ -1,7 +1,7 @@
 import HttpHandler from "../utils/HttpHandler";
 
 const Conection = {
-  get: (ruta: string, search: string | null, page: number | null) => {
+  getJob: (ruta: string, search: string | null, page: number | null) => {
     return HttpHandler.get(
       "https://jobsearch4.p.rapidapi.com/api/v2/Jobs/" + ruta,
       {
@@ -16,6 +16,16 @@ const Conection = {
         },
       }
     );
+  },
+  getLogo: (search: string) => {
+    return HttpHandler.get("https://api.api-ninjas.com/v1/logo", {
+      params: {
+        name: search,
+      },
+      headers: {
+        "X-Api-Key": import.meta.env.VITE_LOGO_KEY,
+      },
+    });
   },
 };
 export default Conection;

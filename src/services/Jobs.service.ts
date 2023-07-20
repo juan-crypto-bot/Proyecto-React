@@ -10,7 +10,7 @@ const JobsService = {
   ): Promise<{ jobs: Job[]; totalPages: number }> => {
     return new Promise<{ jobs: Job[]; totalPages: number }>(
       (resolve, reject) => {
-        Conection.get("Search", search, page)
+        Conection.getJob("Search", search, page)
           .then(async (result) => {
             const totalPages = result.data.totalPages;
             const jobs = JobAdapter(result);
@@ -22,7 +22,7 @@ const JobsService = {
   },
   GetTrabajoById: (idJob: string): Promise<Job> => {
     return new Promise<Job>((resolve, reject) => {
-      Conection.get(idJob, null, null)
+      Conection.getJob(idJob, null, null)
         .then(async (result) => {
           const job = JobAdapterFull(result);
           resolve(job);
