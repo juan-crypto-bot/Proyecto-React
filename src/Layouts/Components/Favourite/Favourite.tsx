@@ -2,8 +2,8 @@ import { Button, IconButton, Modal } from "@mui/material";
 import { useState } from "react";
 import "./Favourite.style.css";
 import StarIcon from "@mui/icons-material/Star";
-import JobsList from "../JobList/JobsList";
-import { useFav } from "../../../../context/FavContext";
+import { useFav } from "../../../context/FavContext";
+import JobsList from "../../../Pages/JobsPage/Components/JobList/JobsList";
 
 function Favourite() {
   const [modal, setModal] = useState(false);
@@ -13,8 +13,7 @@ function Favourite() {
   };
   const body = (
     <div className="list">
-      <JobsList myJobs={fav.favJobs} />
-      <p>FALTA IMPLEMENTAR. VUELVA PRONTO!!</p>
+      {fav.favJobs.length === 0 ?<p>No jobs selected</p>:<JobsList myJobs={fav.favJobs} />}
       <Button color="primary" onClick={() => opencloseModal()}>
         CLOSE
       </Button>
@@ -23,9 +22,9 @@ function Favourite() {
 
   return (
     <div>
-      <IconButton color="primary" type="submit">
+      <IconButton color="primary" type="submit" className="fav-button" onClick={() => opencloseModal()}>
         <StarIcon />
-        <Button onClick={() => opencloseModal()}>FAVOURITE JOBS</Button>
+        <p className="fav-button-text">FAVOURITE JOBS</p>
       </IconButton>
       <div className="modal">
         <Modal open={modal} onClose={opencloseModal}>

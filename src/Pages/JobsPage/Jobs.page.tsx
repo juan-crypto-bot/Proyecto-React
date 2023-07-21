@@ -8,7 +8,6 @@ import "./Jobs.styles.css";
 import { Pagination } from "@mui/material";
 import NoInfo from "../../Components/NoInfo";
 import Loader from "./Components/Loader/Loader";
-import Favourite from "./Components/Favourite/Favourite";
 import JobsService from "../../services/Jobs.service";
 
 interface Pagination {
@@ -58,7 +57,6 @@ const JobsPage = () => {
       />
       <div className="jobs">
         <aside className="filter__container">
-          <Favourite />
           <Filters />
         </aside>
         <main className="job-list__container">
