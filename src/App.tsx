@@ -4,6 +4,7 @@ import "./App.css";
 import JobsPage from "./Pages/JobsPage/Jobs.page";
 import Error404 from "./Pages/Error404";
 import { JobDetailPage } from "./Pages/DetailPage/JobDetail.page";
+import { FavProvider } from "./context/FavContext";
 
 function App() {
   const router = createBrowserRouter([
@@ -25,7 +26,11 @@ function App() {
       ],
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <FavProvider>
+      <RouterProvider router={router} />
+    </FavProvider>
+  );
 }
 
 export default App;
