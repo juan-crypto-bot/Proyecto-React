@@ -6,13 +6,13 @@ import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 function Favourite() {
   const [modal, setModal] = useState(false);
 
-  const abrircerrarModal = () => {
+  const opencloseModal = () => {
     setModal(!modal);
   };
   const body = (
     <div className="list">
-      <p>HOLA</p>
-      <Button>Cerrar</Button>
+      <p>JUNA KAPO</p>
+      <Button color="primary" onClick={()=>opencloseModal()}>CLOSE</Button>
     </div>
   );
 
@@ -20,10 +20,10 @@ function Favourite() {
     <div>
       <IconButton color="primary" type="submit">
         <WorkOutlineIcon />
+        <Button onClick={() => opencloseModal()}>FAVOURITE JOBS</Button>
       </IconButton>
-      <Button onClick={() => abrircerrarModal()}>FAVOURITE JOBS</Button>
       <div className="Fav">
-        <Modal open={modal} onClose={abrircerrarModal}>
+        <Modal open={modal} onClose={opencloseModal}>
           {body}
         </Modal>
       </div>

@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import { TextField, IconButton } from "@mui/material";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import SearchIcon from "@mui/icons-material/Search";
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import "./Seeker.styles.css";
 
 interface Pagination {
@@ -26,6 +27,9 @@ const Seeker = (props: SeekerProps) => {
     props.setSearchQuery(search);
     props.setPagination((prev) => ({ ...prev, page: 1 }));
   }
+  function clearTextBox(){
+    setSearch("");
+  }
 
   return (
     <div className="seeker">
@@ -44,6 +48,13 @@ const Seeker = (props: SeekerProps) => {
           onChange={handleSearchChange}
           required
         ></TextField>
+        <IconButton
+          color="primary"
+          type="button"
+          onClick={clearTextBox}
+        >
+          <CancelOutlinedIcon className="cancel-icon"/>
+        </IconButton>
         <IconButton
           color="primary"
           type="button"

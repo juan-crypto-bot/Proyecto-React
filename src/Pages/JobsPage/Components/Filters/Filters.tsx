@@ -12,13 +12,13 @@ interface FiltrosProps {
   setDate: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Filters = ({ setDate }: FiltrosProps) => {
+const Filters = () => {
   const [value, setValue] = useState<Dayjs | null>(dayjs(new Date()));
 
-  function handleDateChange() {
-    setDate(value?.toString() || "");
-    console.log(value?.toISOString());
-  }
+  // function handleDateChange() {
+  //   setDate(value?.toString() || "");
+  //   console.log(value?.toISOString());
+  // }
 
   return (
     <div className="filters">
@@ -46,7 +46,7 @@ const Filters = ({ setDate }: FiltrosProps) => {
           </DemoItem>
         </DemoContainer>
       </LocalizationProvider>
-      <button className="button-filter" onClick={handleDateChange}>
+      <button className="button-filter">
         <p className="text">FILTER</p>
       </button>
     </div>

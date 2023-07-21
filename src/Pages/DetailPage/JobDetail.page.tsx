@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import TrabajosService from "../../services/Jobs.service";
+import JobsService from "../../services/Jobs.service";
 import { Job } from "../../model/Job";
 import { useEffect, useState } from "react";
 import JobDetail from "./Components/JobDetail/JobDetail";
@@ -9,15 +9,15 @@ import JobDetailAside from "./Components/JobDetailAside/JobDetailAside";
 export const JobDetailPage = () => {
   const { idJob } = useParams();
   const [job, setJob] = useState<Job>();
-  function getTrabajo() {
-    TrabajosService.GetTrabajoById(idJob ?? "")
+  function getJob() {
+    JobsService.GetJobsById(idJob ?? "")
       .then((result) => {
         setJob(result);
       })
       .catch((e) => console.log("There was a mistake", e));
   }
   useEffect(() => {
-    getTrabajo();
+    getJob();
   }, [idJob]);
 
   return (

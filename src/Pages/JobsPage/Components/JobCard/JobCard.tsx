@@ -1,6 +1,6 @@
 import { Job } from "../../../../model/Job";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { IconButton, SvgIcon } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./JobCard.styles.css";
 import { JobImage } from "../JobImage/JobImage";
