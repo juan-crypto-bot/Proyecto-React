@@ -4,7 +4,7 @@ import JobAdapterFull from "../Adapters/JobAdapterFull";
 import Conection from "./Conection.service";
 
 const JobsService = {
-  GetTrabajos: (
+  GetJobs: (
     search: string,
     page: number
   ): Promise<{ jobs: Job[]; totalPages: number }> => {
@@ -20,7 +20,7 @@ const JobsService = {
       }
     );
   },
-  GetTrabajoById: (idJob: string): Promise<Job> => {
+  GetJobsById: (idJob: string): Promise<Job> => {
     return new Promise<Job>((resolve, reject) => {
       Conection.getJob(idJob, null, null)
         .then(async (result) => {

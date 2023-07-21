@@ -1,26 +1,9 @@
 .list {
   position: absolute;
-  width: 400;
-  background-color: white;
-  border: 2px solid #000;
-  box-shadow: 10px 5px 5px black;
+  width: 80%;
+  background-color: #edf2f4;
   padding: 16px 32px 24px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.modal {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
-}
-
-.text {
-  width: "100%";
-}
-.hola {
-  width: 400px;
 }

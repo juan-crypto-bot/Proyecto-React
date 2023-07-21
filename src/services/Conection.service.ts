@@ -7,7 +7,7 @@ const Conection = {
       {
         params: {
           PageNumber: page ? page : 0,
-          SearchQuery: search ? (search.length > 0 ? search : "dev") : "",
+          SearchQuery: search ? search : "dev",
           PageSize: 10,
         },
         headers: {

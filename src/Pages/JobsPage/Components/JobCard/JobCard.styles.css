@@ -29,14 +29,11 @@
   color: gray;
   width: 60%;
 }
-
 .fav {
   display: flex;
   justify-content: center;
-  /* filter: drop-shadow(0px 0px 2px black); */
   color: rgba(128, 128, 128, 0.63);
 }
-
 .fav:hover {
   color: rgba(255, 0, 0, 0.6);
 }

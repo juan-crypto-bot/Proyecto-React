@@ -1,19 +1,24 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import "./JobDetailAside.styles.css";
 import { Job } from "../../../../model/Job";
+
 
 type JobDetailProps = { job: Job };
 
 const JobDetailAside = ({ job }: JobDetailProps) => {
-  console.log(job);
+const navigate = useNavigate()
+  function handleBackButtonClick(){
+    navigate(-1);
+  }
+  
   return (
     <div className="aside">
       <div className="back">
         <ArrowBackIcon className="arrow" color="primary"></ArrowBackIcon>
-        <Link to="/" className="text">
+        <button className="text" onClick={handleBackButtonClick}>
           Back to search
-        </Link>
+        </button>
       </div>
       <a href={job.Url} className="job-buttom">
         Show employment
