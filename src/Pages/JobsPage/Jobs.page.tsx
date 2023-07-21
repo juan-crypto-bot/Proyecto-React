@@ -17,13 +17,15 @@ interface Pagination {
 }
 
 const JobsPage = () => {
-  const [searchParams,setSearchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams();
   const [myJobs, setMyJobs] = useState<Job[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState<string>(searchParams.get("search")??"");
+  const [searchQuery, setSearchQuery] = useState<string>(
+    searchParams.get("search") ?? ""
+  );
 
   const [pagination, setPagination] = useState<Pagination>({
-    page: parseInt(searchParams.get("page")??"1"),
+    page: parseInt(searchParams.get("page") ?? "1"),
     totalPages: 1,
   });
 
@@ -44,7 +46,7 @@ const JobsPage = () => {
 
   useEffect(() => {
     getTrabajos();
-    setSearchParams({search: searchQuery,page:`${pagination.page}`})       
+    setSearchParams({ search: searchQuery, page: `${pagination.page}` });
   }, [searchQuery, pagination.page]);
 
   return (
@@ -56,8 +58,8 @@ const JobsPage = () => {
       />
       <div className="jobs">
         <aside className="filter__container">
-          <Favourite/>
-          <Filters/>
+          <Favourite />
+          <Filters />
         </aside>
         <main className="job-list__container">
           {!isLoading && myJobs.length !== 0 && <JobsList myJobs={myJobs} />}

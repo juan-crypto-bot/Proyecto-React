@@ -37,3 +37,7 @@
 .fav:hover {
   color: rgba(255, 0, 0, 0.6);
 }
+.likeButton {
+  border: none;
+  background-color: transparent;
+}
