@@ -1,4 +1,4 @@
-import HttpHandler from "../utils/HttpHandler";
+import HttpHandler from "../Utils/HttpHandler";
 
 const Conection = {
   getJob: (ruta: string, search: string | null, page: number | null) => {

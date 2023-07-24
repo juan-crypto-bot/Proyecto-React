@@ -1,4 +1,4 @@
-import { Job } from "../../../../model/Job";
+import { Job } from "../../../../Model/Job";
 import JobCard from "../JobCard/JobCard";
 import "./JobList.styles.css";
 

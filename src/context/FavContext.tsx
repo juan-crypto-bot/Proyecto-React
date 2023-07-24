@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { Job } from "../model/Job";
+import { Job } from "../Model/Job";
 
 const FavContext = createContext<{
   favJobs: Job[];
