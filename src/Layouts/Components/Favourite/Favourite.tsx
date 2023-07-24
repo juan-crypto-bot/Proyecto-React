@@ -13,10 +13,12 @@ function Favourite() {
   };
   const body = (
     <div className="list">
-      {fav.favJobs.length === 0 ?<p>No jobs selected</p>:<JobsList myJobs={fav.favJobs} />}
-      <Button color="primary" onClick={() => opencloseModal()}>
+      <div className="list-content">
+        {fav.favJobs.length === 0 ?<p className="no-job-text">No jobs selected</p>:<JobsList myJobs={fav.favJobs} />}
+      <Button className="close-button" color="primary" onClick={() => opencloseModal()}>
         CLOSE
       </Button>
+      </div>
     </div>
   );
 
@@ -27,7 +29,7 @@ function Favourite() {
         <p className="fav-button-text">FAVOURITE JOBS</p>
       </IconButton>
       <div className="modal">
-        <Modal open={modal} onClose={opencloseModal}>
+        <Modal open={modal} onClose={opencloseModal} >
           {body}
         </Modal>
       </div>
