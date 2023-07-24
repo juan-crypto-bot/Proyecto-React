@@ -15,7 +15,7 @@
   width: 8rem;
   height: 8rem;
 }
-.boton {
+.show-more {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 10px;
   display: flex;
@@ -23,6 +23,12 @@
   align-items: center;
   width: auto;
   text-decoration: none;
+  color: #2196f3;
+}
+.show-more:visited,
+.show-more:link,
+.show-more:active {
+  color: #2196f3;
 }
 .info {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -35,9 +41,25 @@
   color: rgba(128, 128, 128, 0.63);
 }
 .fav:hover {
-  color: rgba(255, 0, 0, 0.6);
+  color: gold;
 }
 .likeButton {
   border: none;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2196f3;
+}
+.add-text {
+  margin-left: 10px;
+}
+.buttons {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  text-decoration: none;
 }

@@ -3,15 +3,13 @@
   height: auto;
   width: auto;
   background-color: #edf2f4;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 16px 32px 24px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  overflow: hidden;
-  max-height: 50vh;
+  max-height: 70vh;
   overflow: auto;
-  border-radius: 15px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -30,5 +28,4 @@
 .close-button {
   display: flex;
   justify-content: end;
-  /* align-items: center; */
 }

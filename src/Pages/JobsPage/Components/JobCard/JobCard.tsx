@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./JobCard.styles.css";
 import { JobImage } from "../JobImage/JobImage";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import StarIcon from "@mui/icons-material/Star";
 
 import { useFav } from "../../../../Context/FavContext";
 
@@ -25,22 +26,31 @@ const JobCard = (job: Job) => {
             <JobImage company={job.Company} />
           </div>
           <div className="info">
-            <p className="company"><b>Company:</b> {job.Company}</p>
-            <p className="title"><b>Job:</b> {job.Title}</p>
-            <p className="date"><b>Post Date:</b> {job.PostDate.toISOString()}</p>
+            <p className="company">
+              <b>Company:</b> {job.Company}
+            </p>
+            <p className="title">
+              <b>Job:</b> {job.Title}
+            </p>
+            <p className="date">
+              <b>Post Date:</b> {job.PostDate.toDateString()}
+            </p>
           </div>
-          <button className="likeButton" onClick={handleButtonColor}>
-            <FavoriteIcon
-              className="fav"
-              style={{ color: fav.isFav(job) !== -1 ? "red" : "" }}
-            />
-          </button>
-          <Link to={`${job.Slug}`} className="boton">
-            <IconButton color="primary" type="submit">
-              <AddCircleIcon></AddCircleIcon>
-            </IconButton>
-            Show more
-          </Link>
+          <div className="buttons">
+            <Link to={`${job.Slug}`} className="show-more">
+              <IconButton color="primary" type="submit">
+                <AddCircleIcon></AddCircleIcon>
+              </IconButton>
+              Show
+            </Link>
+            <button className="likeButton" onClick={handleButtonColor}>
+              <StarIcon
+                className="fav"
+                style={{ color: fav.isFav(job) !== -1 ? "gold" : "" }}
+              />
+              <p className="add-text">Favourite</p>
+            </button>
+          </div>
         </div>
       )}
     </>

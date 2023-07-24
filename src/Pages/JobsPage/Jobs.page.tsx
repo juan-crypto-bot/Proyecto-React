@@ -56,9 +56,9 @@ const JobsPage = () => {
         setPagination={setPagination}
       />
       <div className="jobs">
-        <aside className="filter__container">
+        {/* <aside className="filter__container">
           <Filters />
-        </aside>
+        </aside> */}
         <main className="job-list__container">
           {!isLoading && myJobs.length !== 0 && <JobsList myJobs={myJobs} />}
           {!isLoading && myJobs.length === 0 && <NoInfo />}
