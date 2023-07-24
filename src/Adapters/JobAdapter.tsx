@@ -1,6 +1,4 @@
-import React from "react";
 import { Job } from "../Model/Job";
-import LogosService from "../Services/Logos.service";
 
 const JobAdapter = (result: any) => {
   const apiJobs: any[] = result.data.data;

@@ -5,12 +5,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import "./Filters.styles.css";
-import Dropdown from "react-dropdown";
 import { DatePicker } from "@mui/x-date-pickers";
-
-interface FiltrosProps {
-  setDate: React.Dispatch<React.SetStateAction<string>>;
-}
 
 const Filters = () => {
   const [value, setValue] = useState<Dayjs | null>(dayjs(new Date()));

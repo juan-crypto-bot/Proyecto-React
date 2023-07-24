@@ -38,7 +38,6 @@ export const FavProvider: React.FC<Props> = ({ children }) => {
   function isFav(job: Job) {
     return favJobs.findIndex((j) => j.Slug === job.Slug);
   }
-
   const context = { favJobs, handleFav, isFav };
   return <FavContext.Provider value={context}>{children}</FavContext.Provider>;
 };

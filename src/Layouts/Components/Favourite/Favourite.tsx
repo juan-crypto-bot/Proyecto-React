@@ -12,24 +12,36 @@ function Favourite() {
     setModal(!modal);
   };
   const body = (
-    <div className="list">
-      <div className="list-content">
-        {fav.favJobs.length === 0 ?<p className="no-job-text">No jobs selected</p>:<JobsList myJobs={fav.favJobs} />}
-      <Button className="close-button" color="primary" onClick={() => opencloseModal()}>
+    <div className="list-content">
+      {fav.favJobs.length === 0 ? (
+        <p className="no-job-text">No jobs selected</p>
+      ) : (
+        <JobsList myJobs={fav.favJobs} />
+      )}
+
+      <Button
+        className="close-button"
+        color="primary"
+        onClick={() => opencloseModal()}
+      >
         CLOSE
       </Button>
-      </div>
     </div>
   );
 
   return (
     <div>
-      <IconButton color="primary" type="submit" className="fav-button" onClick={() => opencloseModal()}>
+      <IconButton
+        color="primary"
+        type="submit"
+        className="fav-button"
+        onClick={() => opencloseModal()}
+      >
         <StarIcon />
         <p className="fav-button-text">FAVOURITE JOBS</p>
       </IconButton>
       <div className="modal">
-        <Modal open={modal} onClose={opencloseModal} >
+        <Modal open={modal} onClose={opencloseModal}>
           {body}
         </Modal>
       </div>

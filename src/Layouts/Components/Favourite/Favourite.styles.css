@@ -1,4 +1,4 @@
-.list {
+.list-content {
   position: absolute;
   height: auto;
   width: auto;
@@ -9,8 +9,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
-}
-.list-content {
   max-height: 50vh;
   overflow: auto;
   border-radius: 15px;
@@ -21,10 +19,16 @@
   width: 0;
   height: 0;
 }
-.fav-button-text{
+.fav-button-text {
   font-size: small;
 }
-.no-job-text{
+.no-job-text {
   position: relative center;
   text-align: center;
+}
+
+.close-button {
+  display: flex;
+  justify-content: end;
+  /* align-items: center; */
 }

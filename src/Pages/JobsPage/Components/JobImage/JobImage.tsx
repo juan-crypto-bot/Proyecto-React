@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import LogosService from "../../../../Services/Logos.service";
 import Loader from "../Loader/Loader";
 import "./JobImage.styles.css";
+import LogosService from "../../../../Services/Logos.service";
 
 export const JobImage = ({ company }: { company: string }) => {
   const [jobImage, setJobImage] = useState("");

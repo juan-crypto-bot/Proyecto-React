@@ -25,9 +25,9 @@ const JobCard = (job: Job) => {
             <JobImage company={job.Company} />
           </div>
           <div className="info">
-            <p className="company">Company: {job.Company}</p>
-            <p className="title">Job: {job.Title}</p>
-            <p className="date">Post Date: {}</p>
+            <p className="company"><b>Company:</b> {job.Company}</p>
+            <p className="title"><b>Job:</b> {job.Title}</p>
+            <p className="date"><b>Post Date:</b> {job.PostDate.toISOString()}</p>
           </div>
           <button className="likeButton" onClick={handleButtonColor}>
             <FavoriteIcon
