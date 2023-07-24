@@ -1,12 +1,30 @@
 .list {
   position: absolute;
-  width: 80%;
+  height: auto;
+  width: auto;
   background-color: #edf2f4;
+  border-radius: 15px;
   padding: 16px 32px 24px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.list-content {
+  max-height: 50vh;
+  overflow: auto;
+  border-radius: 15px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.list-content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 .fav-button-text{
   font-size: small;
+}
+.no-job-text{
+  position: relative center;
+  text-align: center;
 }
