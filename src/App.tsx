@@ -4,7 +4,7 @@ import "./App.css";
 import JobsPage from "./Pages/JobsPage/Jobs.page";
 import Error404 from "./Pages/Error404";
 import { JobDetailPage } from "./Pages/DetailPage/JobDetail.page";
-import { FavProvider } from "./context/FavContext";
+import { FavProvider } from "./Context/FavContext";
 
 function App() {
   const router = createBrowserRouter([

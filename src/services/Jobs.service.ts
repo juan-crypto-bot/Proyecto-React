@@ -1,4 +1,4 @@
-import { Job } from "../model/Job";
+import { Job } from "../Model/Job";
 import JobAdapter from "../Adapters/JobAdapter";
 import JobAdapterFull from "../Adapters/JobAdapterFull";
 import Conection from "./Conection.service";

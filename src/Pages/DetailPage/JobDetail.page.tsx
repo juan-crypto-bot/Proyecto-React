@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import JobsService from "../../services/Jobs.service";
-import { Job } from "../../model/Job";
+import JobsService from "../../Services/Jobs.service";
+import { Job } from "../../Model/Job";
 import { useEffect, useState } from "react";
 import JobDetail from "./Components/JobDetail/JobDetail";
 import "./JobDetail.styles.css";

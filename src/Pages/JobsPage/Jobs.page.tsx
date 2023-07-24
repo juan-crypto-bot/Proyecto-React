@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Seeker from "./Components/Seeker/Seekeer";
 import JobsList from "./Components/JobList/JobsList";
-import { Job } from "../../model/Job";
+import { Job } from "../../Model/Job";
 import Filters from "./Components/Filters/Filters";
 import "./Jobs.styles.css";
 import { Pagination } from "@mui/material";
 import NoInfo from "../../Components/NoInfo";
 import Loader from "./Components/Loader/Loader";
-import JobsService from "../../services/Jobs.service";
+import JobsService from "../../Services/Jobs.service";
 
 interface Pagination {
   page: number;

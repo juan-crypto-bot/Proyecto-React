@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import LogosService from "../../../../services/Logos.service";
+import LogosService from "../../../../Services/Logos.service";
 import Loader from "../Loader/Loader";
 import "./JobImage.styles.css";
 

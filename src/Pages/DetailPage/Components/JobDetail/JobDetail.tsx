@@ -1,6 +1,6 @@
-import { Job } from "../../../../model/Job";
+import { Job } from "../../../../Model/Job";
 import { JobImage } from "../../../JobsPage/Components/JobImage/JobImage";
-import "./JobDetailStyle.css";
+import "./JobDetail.styles.css";
 
 type JobDetailProps = { job: Job };
 

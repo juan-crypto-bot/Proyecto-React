@@ -1,7 +1,7 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Link , useNavigate} from "react-router-dom";
 import "./JobDetailAside.styles.css";
-import { Job } from "../../../../model/Job";
+import { Job } from "../../../../Model/Job";
 
 
 type JobDetailProps = { job: Job };

@@ -1,8 +1,8 @@
 import { Button, IconButton, Modal } from "@mui/material";
 import { useState } from "react";
-import "./Favourite.style.css";
+import "./Favourite.styles.css";
 import StarIcon from "@mui/icons-material/Star";
-import { useFav } from "../../../context/FavContext";
+import { useFav } from "../../../Context/FavContext";
 import JobsList from "../../../Pages/JobsPage/Components/JobList/JobsList";
 
 function Favourite() {
