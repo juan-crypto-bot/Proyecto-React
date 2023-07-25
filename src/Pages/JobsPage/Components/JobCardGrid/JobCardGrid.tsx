@@ -2,14 +2,12 @@ import { Job } from "../../../../Model/Job";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
-import "./JobCard.styles.css";
 import { JobImage } from "../JobImage/JobImage";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import StarIcon from "@mui/icons-material/Star";
 
 import { useFav } from "../../../../Context/FavContext";
 
-const JobCard = (job: Job) => {
+const JobCardGrid = (job: Job) => {
   const fav = useFav();
 
   const handleButtonColor: React.MouseEventHandler<HTMLButtonElement> = (
@@ -27,7 +25,7 @@ const JobCard = (job: Job) => {
       {job && (
         <div className="job-card">
           <div className="contenedor-img">
-            <JobImage company={job.Company} />
+            <JobImage company={job.Company}/>
           </div>
           <div className="info">
             <p className="company">
@@ -60,4 +58,4 @@ const JobCard = (job: Job) => {
     </>
   );
 };
-export default JobCard;
+export default JobCardGrid;
