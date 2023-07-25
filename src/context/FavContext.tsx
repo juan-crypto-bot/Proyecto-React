@@ -1,14 +1,16 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Job } from "../Model/Job";
 
-const FavContext = createContext<{
+interface IFavContext {
   favJobs: Job[];
   handleFav: (job: Job) => void;
-  isFav: (job: Job) => number;
-}>({
+  isFav: (job: Job) => boolean;
+}
+
+const FavContext = createContext<IFavContext>({
   favJobs: [],
   handleFav: () => null,
-  isFav: () => 0,
+  isFav: () => false,
 });
 
 export const useFav = () => useContext(FavContext);
@@ -19,7 +21,7 @@ type Props = {
 
 export const FavProvider: React.FC<Props> = ({ children }) => {
   const [favJobs, setFavJobs] = useState<Job[]>(
-    JSON.parse(localStorage.getItem("favJobs") ?? "[]")
+    JSON.parse(localStorage.getItem("favJobs") ?? "[]") //VER LOCALSTORAGE COMO IMPLEMENTARLO //AJUSTAR EL ALCANCE DEL FAV TAMBIEN
   );
 
   useEffect(() => {
@@ -27,7 +29,7 @@ export const FavProvider: React.FC<Props> = ({ children }) => {
   }, [favJobs]);
 
   function handleFav(job: Job) {
-    const index = isFav(job);
+    const index = favJobs.findIndex((j) => j.Slug === job.Slug);
     if (index !== -1) {
       setFavJobs((prev) => prev.filter((_, i) => i !== index));
     } else {
@@ -36,8 +38,9 @@ export const FavProvider: React.FC<Props> = ({ children }) => {
   }
 
   function isFav(job: Job) {
-    return favJobs.findIndex((j) => j.Slug === job.Slug);
+    return favJobs.findIndex((j) => j.Slug === job.Slug) !== -1;
   }
+
   const context = { favJobs, handleFav, isFav };
   return <FavContext.Provider value={context}>{children}</FavContext.Provider>;
 };

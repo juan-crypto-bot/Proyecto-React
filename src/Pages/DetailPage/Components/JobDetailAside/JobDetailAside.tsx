@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./JobDetailAside.styles.css";
 import { Job } from "../../../../Model/Job";
+import { Button } from "@mui/material";
 
 type JobDetailProps = { job: Job };
 
@@ -12,9 +13,9 @@ const JobDetailAside = ({ job }: JobDetailProps) => {
 
   return (
     <div className="aside">
-      <button className="back" onClick={handleBackButtonClick}>
+      <Button className="back" onClick={handleBackButtonClick}>
         Back to search
-      </button>
+      </Button>
       <a href={job.Url} className="show">
         Show employment
       </a>

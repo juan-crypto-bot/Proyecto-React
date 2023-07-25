@@ -46,7 +46,7 @@ const JobCard = (job: Job) => {
             <button className="likeButton" onClick={handleButtonColor}>
               <StarIcon
                 className="fav"
-                style={{ color: fav.isFav(job) !== -1 ? "gold" : "" }}
+                style={{ color: fav.isFav(job) ? "gold" : "" }}
               />
               <p className="add-text">Favourite</p>
             </button>

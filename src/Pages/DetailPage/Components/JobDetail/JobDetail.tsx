@@ -7,14 +7,14 @@ type JobDetailProps = { job: Job };
 const JobDetail = ({ job }: JobDetailProps) => {
   return (
     <div className="detail">
-      <h2 className="title-detail">{job.Title}</h2>
-      <h3 className="company-detail">{job.Company}</h3>
+      <h1 className="title-detail">{job.Title}</h1>
+      <h1 className="company-detail">{job.Company}</h1>
       <div className="job-detail-company">
         <JobImage company={job.Company} />
       </div>
       <div
         className="info-detail"
-        dangerouslySetInnerHTML={{ __html: job.Description }}
+        dangerouslySetInnerHTML={{ __html: job.Description }} //revisar ¿¿porque se usa??
       ></div>
     </div>
   );
