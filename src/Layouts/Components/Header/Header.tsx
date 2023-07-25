@@ -7,7 +7,6 @@ export const Header = () => {
       <h2 className="titleHeader">
         <b>Github</b> Jobs
       </h2>
-      <Favourite />
     </header>
   );
 };
