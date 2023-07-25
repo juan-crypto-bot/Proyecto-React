@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Seeker from "./Components/Seeker/Seekeer";
-import JobsList from "./Components/JobList/JobsList";
 import { Job } from "../../Model/Job";
 import Filters from "./Components/Filters/Filters";
 import "./Jobs.styles.css";
@@ -10,6 +9,8 @@ import NoInfo from "../../Components/NoInfo";
 import Loader from "./Components/Loader/Loader";
 import JobsService from "../../Services/Jobs.service";
 import Favourite from "./Components/Favourite/Favourite";
+import JobGrid from "./Components/JobGrid/JobGrid";
+import JobsList from "./Components/JobList/JobsList";
 
 interface Pagination {
   page: number;
