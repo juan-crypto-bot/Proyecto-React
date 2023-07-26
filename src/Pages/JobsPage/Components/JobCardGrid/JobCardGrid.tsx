@@ -4,8 +4,8 @@ import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import { JobImage } from "../JobImage/JobImage";
 import StarIcon from "@mui/icons-material/Star";
-
 import { useFav } from "../../../../Context/FavContext";
+import "./JobCardGrid.styles.css";
 
 const JobCardGrid = (job: Job) => {
   const fav = useFav();
@@ -23,23 +23,23 @@ const JobCardGrid = (job: Job) => {
   return (
     <>
       {job && (
-        <div className="job-card">
-          <div className="contenedor-img">
-            <JobImage company={job.Company}/>
+        <div className="job-card-grid">
+          <div className="contenedor-img-grid">
+            <JobImage company={job.Company} />
           </div>
-          <div className="info">
-            <p className="company">
+          <div className="info-grid">
+            <p className="company-grid">
               <b>Company:</b> {job.Company}
             </p>
-            <p className="title">
+            <p className="title-grid">
               <b>Job:</b> {job.Title}
             </p>
-            <p className="date">
+            <p className="date-grid">
               <b>Post Date:</b> {job.PostDate.toDateString()}
             </p>
           </div>
-          <div className="buttons">
-            <Link to={`${job.Slug}`} className="show-more">
+          <div className="buttons-grid">
+            <Link to={`${job.Slug}`} className="show-more-grid">
               <IconButton color="primary" type="submit">
                 <AddCircleIcon></AddCircleIcon>
               </IconButton>
@@ -47,10 +47,10 @@ const JobCardGrid = (job: Job) => {
             </Link>
             <button className="likeButton" onClick={handleButtonColor}>
               <StarIcon
-                className="fav"
+                className="fav-grid"
                 style={{ color: fav.isFav(job) ? "gold" : "" }}
               />
-              <p className="add-text">Favourite</p>
+              <p className="add-text-grid">Favourite</p>
             </button>
           </div>
         </div>

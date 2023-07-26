@@ -1,42 +1,70 @@
-/* Estilos para la tarjeta */
-.job-card {
-    display: grid;
-    grid-template-columns: 100px 1fr auto;
-    grid-template-areas: "img info buttons";
-    background-color: white;
-    border-radius: 10px;
-    padding: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+.job-card-grid {
+  border: 2px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.7);
+  width: 200px;
+  height: 420px;
+  justify-self: center;
 }
-.contenedor-img {
-    grid-area: img;
-    border-radius: 10px;
-    overflow: hidden;
+.job-card-grid:hover {
+  transform: scale(1.1);
 }
-.contenedor-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.info-grid {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: gray;
+  width: 100%;
+  height: 170px;
 }
-.info {
-    grid-area: info;
-    padding: 0 16px;
+.buttons-grid {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 60px;
 }
-.info p {
-    margin: 6px 0;
+.show-more-grid {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  width: auto;
+  text-decoration: none;
+  margin-left: 2rem;
+  color: #2196f3;
 }
-.info b {
-    font-weight: bold;
+.show-more:visited,
+.show-more:link,
+.show-more:active {
+  color: #2196f3;
 }
-.buttons {
-    grid-area: buttons;
-    display: flex;
-    align-items: center;
+.fav-grid {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: auto;
+  color: rgba(128, 128, 128, 0.63);
 }
-.show-more {
-    text-decoration: none;
-    color: #3f51b5;
-    display: flex;
-    align-items: center;
+.fav-grid:hover {
+  color: gold;
 }
+.likeButton {
+  border: none;
+  font-size: medium;
+  background-color: transparent;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  margin-left: 2rem;
+}
+.add-text-grid {
+  margin-left: 10px;
+}
+
+/* .job-card-grid:hover .show-more {
+  display: flex;
+} */

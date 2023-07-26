@@ -6,11 +6,13 @@ import Conection from "./Conection.service";
 const JobsService = {
   GetJobs: (
     search: string,
-    page: number
+    page: number,
+    pageSize: number
   ): Promise<{ jobs: Job[]; totalPages: number }> => {
+    console.log(pageSize);
     return new Promise<{ jobs: Job[]; totalPages: number }>(
       (resolve, reject) => {
-        Conection.getJob("Search", search, page)
+        Conection.getJob("Search", search, page, pageSize)
           .then(async (result) => {
             const totalPages = result.data.totalPages;
             const jobs = JobAdapter(result);
@@ -22,7 +24,7 @@ const JobsService = {
   },
   GetJobsById: (idJob: string): Promise<Job> => {
     return new Promise<Job>((resolve, reject) => {
-      Conection.getJob(idJob, null, null)
+      Conection.getJob(idJob, null, null, null)
         .then(async (result) => {
           const job = JobAdapterFull(result);
           resolve(job);
