@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Job } from "../Model/Job";
-import FavRepository from "../Repository/FavRepository";
+import FavRepository from "../Repositories/FavLSRepository";
 
 interface IFavContext {
   favJobs: Job[];

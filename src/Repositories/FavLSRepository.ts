@@ -1,5 +1,6 @@
 import { Job } from "../Model/Job";
-const FavRepository = {
+import IFavRepository from "./IFavRepository";
+const FavLSRepository: IFavRepository = {
   getFavs() {
     const favs = localStorage.getItem("favJobs");
     return favs ? JSON.parse(favs) : [];
@@ -8,4 +9,4 @@ const FavRepository = {
     localStorage.setItem("favJobs", JSON.stringify(favJobs));
   },
 };
-export default FavRepository;
+export default FavLSRepository;
