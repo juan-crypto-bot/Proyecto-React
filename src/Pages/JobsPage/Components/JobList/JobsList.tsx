@@ -10,7 +10,7 @@ const JobsList = ({ myJobs }: JobsListProps) => {
   return (
     <div className="job-list">
       {myJobs.map((job: Job) => (
-        <JobCard {...job} />
+        <JobCard key={job.Slug} {...job} />
       ))}
     </div>
   );

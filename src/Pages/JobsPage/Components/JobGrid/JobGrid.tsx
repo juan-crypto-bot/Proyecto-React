@@ -10,7 +10,7 @@ const JobGrid = ({ myJobs }: JobsListProps) => {
   return (
     <div className="job-grid">
       {myJobs.map((job: Job) => (
-        <JobCardGrid {...job} />
+        <JobCardGrid key={job.Slug} {...job} />
       ))}
     </div>
   );
