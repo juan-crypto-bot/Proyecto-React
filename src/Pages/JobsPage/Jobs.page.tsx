@@ -18,6 +18,16 @@ interface Pagination {
   pageSize: number;
 }
 
+function getPageSize(){
+  if (window.innerWidth > 1500) {
+    return 15
+  }
+  if (window.innerWidth > 1120) {
+    return 12
+  }
+  return 10
+}
+
 const JobsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [myJobs, setMyJobs] = useState<Job[]>([]);
@@ -28,7 +38,7 @@ const JobsPage = () => {
   const [pagination, setPagination] = useState<Pagination>({
     page: parseInt(searchParams.get("page") ?? "1"),
     totalPages: 1,
-    pageSize: 10,
+    pageSize: getPageSize(),
   });
 
   const getTrabajos = () => {
@@ -48,14 +58,8 @@ const JobsPage = () => {
 
   useEffect(() => {
     const handleWindowResize = () => {
-      if (window.innerWidth >= 1500) {
-        return setPagination((prev) => ({ ...prev, pageSize: 15 }));
-      }
-      if (window.innerWidth >= 1120) {
-        return setPagination((prev) => ({ ...prev, pageSize: 12 }));
-      }
+      setPagination((prev) => ({ ...prev, pageSize: getPageSize() }));
     };
-    handleWindowResize();
     window.addEventListener("resize", handleWindowResize);
 
     return () => {
@@ -64,6 +68,7 @@ const JobsPage = () => {
   }, []);
 
   useEffect(() => {
+    console.log("getTrabajos");
     getTrabajos();
     setSearchParams({ search: searchQuery, page: `${pagination.page}` });
   }, [searchQuery, pagination.page, pagination.pageSize]);
@@ -83,7 +88,7 @@ const JobsPage = () => {
           <main className="job-list__container">
             {!isLoading && myJobs.length !== 0 && <JobGrid myJobs={myJobs} />}
             {!isLoading && myJobs.length === 0 && <NoInfo />}
-            {isLoading && (
+            {isLoading && ( 
               <div className="loader">
                 <Loader />
               </div>

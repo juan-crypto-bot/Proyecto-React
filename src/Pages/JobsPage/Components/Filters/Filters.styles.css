@@ -7,7 +7,6 @@
     gap: 0.9rem;
   }
   .text {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     color: rgb(69, 67, 67);
   }
   .button-filter {
@@ -34,7 +33,6 @@
     align-items: center;
   }
   .text {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     color: rgb(69, 67, 67);
   }
   .button-filter {

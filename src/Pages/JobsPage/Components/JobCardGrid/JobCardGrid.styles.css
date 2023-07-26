@@ -4,29 +4,24 @@
   text-align: center;
   background-color: white;
   transition: transform 0.3s ease;
-  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.3);
   width: 200px;
   height: 420px;
   justify-self: center;
 }
-.job-card-grid:hover {
-  transform: scale(1.1);
-}
+
 .info-grid {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: gray;
   width: 100%;
   height: 170px;
 }
 .buttons-grid {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 60px;
 }
 .show-more-grid {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: medium;
   display: flex;
   align-items: center;
@@ -41,7 +36,6 @@
   color: #2196f3;
 }
 .fav-grid {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -55,7 +49,6 @@
   border: none;
   font-size: medium;
   background-color: transparent;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   flex-direction: row;
   width: auto;
@@ -64,7 +57,3 @@
 .add-text-grid {
   margin-left: 10px;
 }
-
-/* .job-card-grid:hover .show-more {
-  display: flex;
-} */
