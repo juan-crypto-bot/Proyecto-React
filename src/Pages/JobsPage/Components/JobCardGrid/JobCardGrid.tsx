@@ -35,7 +35,7 @@ const JobCardGrid = (job: Job) => {
               <b>Job:</b> {job.Title}
             </p>
             <p className="date-grid">
-              <b>Post Date:</b> {job.PostDate.toDateString()}
+              <b>Post Date:</b> {`${job.PostDate.getDay()}/${job.PostDate.getMonth()+1}/${job.PostDate.getFullYear()}`}
             </p>
           </div>
           <div className="buttons-grid">

@@ -9,7 +9,6 @@ function Loader() {
         loop
         autoplay
         speed={1}
-        style={{ width: "50%", height: "auto" }}
       />
     </>
   );
