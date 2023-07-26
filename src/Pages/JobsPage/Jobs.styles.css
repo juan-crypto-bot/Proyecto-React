@@ -1,14 +1,11 @@
 .jobs {
-  margin: 1rem 0;
   display: flex;
-  /* gap: 2rem; */
-  height: 100%;
+  height: 70%;
   flex-wrap: wrap;
-  justify-content: center;
 }
-.favourite {
+/* .favourite {
   width: 100%;
-}
+} */
 .job-list__container {
   width: 100%;
 }

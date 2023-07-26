@@ -21,7 +21,7 @@ export const JobImage = ({ company }: { company: string }) => {
   return (
     <>
       {!isLoading ? (
-        <img className="job-image" src={jobImage ?? "./GitHubIcon.jpg"} />
+        <img className="job-image-grid" src={jobImage ?? "./GitHubIcon.jpg"} />
       ) : (
         <Loader />
       )}

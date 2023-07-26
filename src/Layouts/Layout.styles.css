@@ -1,6 +1,6 @@
 .outlet {
   margin: 0 auto;
-  width: 95%;
+  width: 70%;
   flex-grow: 1;
 }
 .App {
@@ -8,7 +8,7 @@
   flex-direction: column;
   min-height: 100vh;
 }
-@media (min-width: 680px) {
+@media (min-width: 768px) {
   .outlet {
     width: 70%;
   }

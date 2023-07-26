@@ -26,11 +26,7 @@ function App() {
       ],
     },
   ]);
-  return (
-    <FavProvider>
-      <RouterProvider router={router} />
-    </FavProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

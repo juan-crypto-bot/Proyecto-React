@@ -1,4 +1,3 @@
-import Favourite from "../Favourite/Favourite";
 import "./Header.styles.css";
 
 export const Header = () => {
