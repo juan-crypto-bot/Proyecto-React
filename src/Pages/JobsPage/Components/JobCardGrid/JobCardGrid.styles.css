@@ -22,13 +22,13 @@
   height: 60px;
 }
 .show-more-grid {
-  font-size: medium;
   display: flex;
   align-items: center;
   width: auto;
   text-decoration: none;
   margin-left: 2rem;
   color: #2196f3;
+  font-size: 1.15rem;
 }
 .show-more:visited,
 .show-more:link,
@@ -47,12 +47,13 @@
 }
 .likeButton {
   border: none;
-  font-size: medium;
+  font-size: 1rem;
   background-color: transparent;
   display: flex;
   flex-direction: row;
   width: auto;
   margin-left: 2rem;
+  color: #2196f3;
 }
 .add-text-grid {
   margin-left: 10px;
