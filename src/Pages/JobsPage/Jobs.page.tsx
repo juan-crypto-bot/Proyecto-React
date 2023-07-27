@@ -8,8 +8,8 @@ import NoInfo from "../../Components/NoInfo";
 import Loader from "./Components/Loader/Loader";
 import JobsService from "../../Services/Jobs.service";
 import Favourite from "./Components/Favourite/Favourite";
-import JobGrid from "./Components/JobGrid/JobGrid";
-import JobsList from "./Components/JobList/JobsList";
+import JobGrid from "./Components/Jobs/JobGrid/JobGrid";
+import JobsList from "./Components/Jobs/JobList/JobsList";
 import { FavProvider } from "../../Context/FavContext";
 
 interface Pagination {
@@ -18,14 +18,14 @@ interface Pagination {
   pageSize: number;
 }
 
-function getPageSize(){
+function getPageSize() {
   if (window.innerWidth > 1500) {
-    return 15
+    return 15;
   }
   if (window.innerWidth > 1120) {
-    return 12
+    return 12;
   }
-  return 10
+  return 10;
 }
 
 const JobsPage = () => {
@@ -88,7 +88,7 @@ const JobsPage = () => {
           <main className="job-list__container">
             {!isLoading && myJobs.length !== 0 && <JobGrid myJobs={myJobs} />}
             {!isLoading && myJobs.length === 0 && <NoInfo />}
-            {isLoading && ( 
+            {isLoading && (
               <div className="loader">
                 <Loader />
               </div>

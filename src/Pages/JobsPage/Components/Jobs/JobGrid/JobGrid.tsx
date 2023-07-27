@@ -1,5 +1,5 @@
-import { Job } from "../../../../Model/Job";
-import JobCardGrid from "../JobCardGrid/JobCardGrid";
+import { Job } from "../../../../../Model/Job";
+import JobCardGrid from "../../Cards/JobCardGrid/JobCardGrid";
 import "./JobGrid.styles.css";
 
 interface JobsListProps {

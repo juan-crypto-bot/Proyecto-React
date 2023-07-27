@@ -1,5 +1,5 @@
-import { Job } from "../../../../Model/Job";
-import JobCard from "../JobCard/JobCard";
+import { Job } from "../../../../../Model/Job";
+import JobCard from "../../Cards/JobCard/JobCard";
 import "./JobList.styles.css";
 
 interface JobsListProps {

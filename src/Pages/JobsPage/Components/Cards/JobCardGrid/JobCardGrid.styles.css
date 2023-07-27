@@ -9,7 +9,10 @@
   height: 420px;
   justify-self: center;
 }
-
+.contenedor-img-grid {
+  display: flex;
+  height: 120px;
+}
 .info-grid {
   color: gray;
   width: 100%;

@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./Favourite.styles.css";
 import StarIcon from "@mui/icons-material/Star";
 import { useFav } from "../../../../Context/FavContext";
-import JobsList from "../JobList/JobsList";
+import JobsList from "../Jobs/JobList/JobsList";
 
 function Favourite() {
   const [modal, setModal] = useState(false);
