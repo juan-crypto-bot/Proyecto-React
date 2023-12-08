@@ -45,6 +45,7 @@ const JobsPage = () => {
     setIsLoading(true);
     JobsService.GetJobs(searchQuery, pagination.page, pagination.pageSize)
       .then((result) => {
+        console.log(result);
         setMyJobs(result.jobs);
         setPagination((prev) => ({ ...prev, totalPages: result.totalPages }));
         setIsLoading(false);
